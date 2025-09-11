@@ -1,6 +1,6 @@
 # Single-Finger Gripper for Scooping Object
 
-We present our **Single-Finger Gripper for High-Speed Scooping**, a new robotic end-effector designed to scoop objects quickly.
+We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robotic end-effector designed to scoop objects quickly.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).\
 \
 ![Image](https://github.com/user-attachments/assets/ff8aee65-1ade-4aa5-98c2-da446d936d9f)
@@ -197,8 +197,6 @@ odrivetool
 ### Experiment ③ : Drone-Mounted Test (planned)
 *(planned)*
 
----
-
 ## Five-Bar Linkage Code
 Kinematic simulation for the fingertip mechanism lives in `src/five_bar_linkage.py`.
 
@@ -206,8 +204,6 @@ Kinematic simulation for the fingertip mechanism lives in `src/five_bar_linkage.
 from five_bar_linkage import simulate
 simulate(lengths=[100, 80, 60, 80, 100], top_point=(0, 200))
 ```
-
----
 
 ## Contributors
 - **Jiwoong Choi** — <chjwng@pusan.ac.kr>  
