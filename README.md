@@ -86,7 +86,6 @@ Build **four** identical actuator modules:
 ![Motor Plate](docs/motor_plate.png)  
 ![Actuator Module](docs/actuator_module.png)
 
----
 
 ## Wiring
 Follow the system diagram. **Black = encoder**, **Green = power**.
@@ -112,7 +111,6 @@ Keep **3-phase** order consistent across modules.
 ![ODrive Power](docs/odrive_power.png)  
 ![ODrive Pin Map](docs/odrive_pinmap.png)
 
----
 
 ## Motor Calibration
 Calibrate **each** actuator **before** assembling the full gripper.
@@ -134,11 +132,9 @@ In **Inspector**, read each ODrive’s `pos_estimate` and **record** it—used l
 
 ![Motor Offset in GUI](docs/motor_offset_gui.png)
 
----
-
 ## Gripper
 
-### Finger Assembly ×2
+### Finger Assembly
 Insert bearings at the **red-circled** locations.  
 ![Finger](docs/finger.png)
 
@@ -146,7 +142,6 @@ Insert bearings at the **red-circled** locations.
 ![Gripper Shell](docs/gripper_shell.png)  
 ![Gripper](docs/gripper.png)
 
----
 
 ## Mounting
 Standard interface: **60 mm PCD**, **4 × M4**.  
@@ -156,13 +151,12 @@ Standard interface: **60 mm PCD**, **4 × M4**.
 ### Customization
 Default mounting targets **Rainbow Robotics RB5**. For other robots, customize the **adapter plate** and **coupling** (drawings in `docs/base_mount.dxf`).
 
----
 
 ## Software
 Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
 
 ### Versions
-- Ubuntu: `20.04`  
+- Ubuntu: `22.04`  
 - Python: `3.10.11`  
 - ODrive control utility: `0.6.7`
 
@@ -192,8 +186,6 @@ odrivetool
 # In [1]: odrv0.vbus_voltage
 ```
 
----
-
 ## Experiments
 
 ### Experiment ① : Object (10 g)
@@ -219,5 +211,5 @@ simulate(lengths=[100, 80, 60, 80, 100], top_point=(0, 200))
 
 ## Contributors
 - **Jiwoong Choi** — <chjwng@pusan.ac.kr>  
-- **Yongju Ryu** — <ryj01@naver.com>
+- **Yongjoo Ryu** — <ryj01@naver.com>
 - **Hyunwoo Seong** - <zidlt@pusan.ac.kr>
