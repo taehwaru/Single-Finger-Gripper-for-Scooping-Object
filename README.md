@@ -208,4 +208,4 @@ simulate(lengths=[100, 80, 60, 80, 100], top_point=(0, 200))
 ## Contributors
 - **Ji-woong Choi**, chjwng@pusan.ac.kr
 - **Yong-joo Ryu**, ryj01@naver.com
-- - **Hyun-woo Seong**, zidlt@pusan.ac.kr
+- **Hyun-woo Seong**, zidlt@pusan.ac.kr
