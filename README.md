@@ -4,6 +4,7 @@ We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robo
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).\
 \
 <img width="617" height="617" alt="Image" src="https://github.com/user-attachments/assets/bf89879c-7dfa-4032-8fb6-c7ac7dda276b" />\
+![Image](https://github.com/user-attachments/assets/4b15b6c3-724a-4c86-894e-5c1ba3932837)\
 **Related repos**
 * [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping/tree/main)
 * [**Direct-Drive Gripper (2024)**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
