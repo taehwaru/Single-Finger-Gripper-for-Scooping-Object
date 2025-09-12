@@ -199,6 +199,7 @@ odrivetool
 
 ## Five-Bar Linkage Code
 ![Image](https://github.com/user-attachments/assets/4b15b6c3-724a-4c86-894e-5c1ba3932837)
+
 Kinematic simulation for the fingertip mechanism lives in `src/five_bar_linkage.py`.
 
 ```python
