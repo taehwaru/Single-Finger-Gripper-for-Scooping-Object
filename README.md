@@ -3,7 +3,7 @@
 We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robotic end-effector designed to scoop objects quickly.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).\
 \
-![Image](https://github.com/user-attachments/assets/ff8aee65-1ade-4aa5-98c2-da446d936d9f)
+<img width="617" height="617" alt="Image" src="https://github.com/user-attachments/assets/bf89879c-7dfa-4032-8fb6-c7ac7dda276b" />\
 **Related repos**
 * [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping/tree/main)
 * [**Direct-Drive Gripper (2024)**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
@@ -26,7 +26,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Calibrate ODrives](#calibrate-odrives)  
   - [Calibrate Zero Position](#calibrate-zero-position)
 - [Gripper](#gripper)  
-  - [Finger Assembly ×2](#finger-assembly-2)  
+  - [Finger Assembly](#finger-assembly)  
   - [Gripper Assembly](#gripper-assembly)
 - [Mounting](#mounting)  
   - [Customization](#customization)
@@ -47,7 +47,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 - [T-Motor GB54-2](https://store.tmotor.com/goods-445-GB54-2.html) × 4  
 - [ODrive S1](https://shop.odriverobotics.com/products/odrive-s1) × 4  
 - [AS5048A magnetic encoder + solid magnet](https://ko.aliexpress.com/item/1005004239532357.html?spm=a2g0o.ppclist.product.16.189a33gr33grC1&pdp_npi=2%40dis%21KRW%21%E2%82%A9%2020%2C299%21%E2%82%A9%2020%2C299%21%21%21%21%21%402103011616813606980156478ed18f%2112000028490990365%21btf&_t=pvid%3A1729ba70-2e9e-4e62-ae44-2781def9d2bc&afTraceInfo=1005004239532357__pc__pcBridgePPC__xxxxxx__1681360698&gatewayAdapt=glo2kor) × 4  
-- [Bearings — OD 100 mm / ID 6 mm](https://kr.misumi-ec.com/vona2/detail/221000058378/?KWSearch=%eb%b2%a0%ec%96%b4%eb%a7%81&searchFlow=results2products) × 12  
+- [Bearings — OD 100 mm / ID 6 mm](https://kr.misumi-ec.com/vona2/detail/221000058378/?KWSearch=%eb%b2%a0%ec%96%b4%eb%a7%81&searchFlow=results2products) × 3  
 - [Wire terminal box](https://freeship.co.kr/goods/content.asp?guid=14063350&cate=&sitecate=mini) × 1  
 - [Shielded cable](https://smartstore.naver.com/bantolmarket/products/10633794496) × 1  
 - [3-phase cable](https://smartstore.naver.com/shipdiy/products/7890381050?) × 3
