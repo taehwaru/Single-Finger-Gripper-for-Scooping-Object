@@ -193,7 +193,7 @@ odrivetool
 ![Image](https://github.com/user-attachments/assets/c4ebd16a-ba07-4b57-8cf1-6ba6bf7666ab)
 
 ### Experiment ② : Object (30 g)
-![Image](https://github.com/user-attachments/assets/e5ddfd41-8be7-46ae-95f7-4258b30a4871)
+![Image](https://github.com/user-attachments/assets/28eefbeb-4b33-4c8f-abf6-829790dbf17d)
 
 ### Experiment ③ : Drone-Mounted Test (planned)
 *(planned)*
