@@ -3,7 +3,7 @@
 We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robotic end-effector designed to scoop objects quickly.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).\
 \
-<img width="1000" height="1000" alt="Image" src="https://github.com/user-attachments/assets/23c0047b-fe93-46a2-b855-3199e00f90fe" />\
+<img width="1000" height="1000" alt="Image" src="https://github.com/user-attachments/assets/44b333e8-3319-4073-98d7-50a0dfb12ab4" />\
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
 
 **Related repos**
