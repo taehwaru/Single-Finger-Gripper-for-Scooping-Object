@@ -3,7 +3,9 @@
 We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robotic end-effector designed to scoop objects quickly.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).\
 \
-![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)\
+<img width="1000" height="1000" alt="Image" src="https://github.com/user-attachments/assets/23c0047b-fe93-46a2-b855-3199e00f90fe" />\
+![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
+
 **Related repos**
 * [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping/tree/main)
 * [**Direct-Drive Gripper (2024)**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
@@ -54,7 +56,8 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 
 ### 3D Printing
 - **Gripper**
-  <img width="617" height="617" alt="Image" src="https://github.com/user-attachments/assets/bf89879c-7dfa-4032-8fb6-c7ac7dda276b" />
+<img width="539" height="560" alt="Image" src="https://github.com/user-attachments/assets/5da362db-3cf8-4530-8134-9ac9b487d681" />
+
   - [distal_link](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_link.stl) × 2  
   - [distal_tip_cap](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_tip.stl) × 1  
   - [distal_tip](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_tip_cap.stl) × 1  
