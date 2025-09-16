@@ -7,7 +7,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
 
 **Related repos**
-* [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping/tree/main)
+* [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping)
 * [**Direct-Drive Gripper (2024)**](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips)
 * [**High-Speed Scooping (2022)**](https://github.com/JS-RML/high_speed_scooping)
 * [**Direct-Drive Gripper (2022)**](https://github.com/JS-RML/ddh_hardware)
@@ -25,6 +25,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Customization](#customization)
 - [Software](#software)  
   - [Versions](#versions)
+  - [Virtual Environment Settings](#virtual-environment-settings)
   - [Motor Manipulation](#motor-manipulation)  
 - [Experiments](#experiments)  
   - [Experiment ① : Test Object (10 g)](#experiment---test-object-10-g)  
@@ -105,8 +106,14 @@ Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
 
 Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
 
-## Virtual Environment settings
-curl -s https://gist.githubusercontent.com/korironturtle99/f62fa8e82ebf7c04c95d24b47ba161d4/raw/133f56b97864ae51426c15520f9cdae7c0a2f6c3/Virtual%2520Environment 
+## Virtual Environment Settings
+
+```bash 
+sudo apt-get install python3-venv
+python3 -m venv myenv
+source myenv/bin/activate
+pip install --upgrade odrive
+```
 
 ## Motor Manipulation
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
