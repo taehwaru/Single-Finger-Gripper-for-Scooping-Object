@@ -109,6 +109,7 @@ Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Ge
 if you finish [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) part and before Run main.py, you have to set Virtual Enviroment.
 
 ## Virtual Environment Settings
+open your Visual Studio Code terminal and copy and paste downside code at termial  
 
 ```bash 
 sudo apt-get install python3-venv
