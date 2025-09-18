@@ -106,6 +106,8 @@ Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
 
 Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
 
+if you finish [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) part and before Run main.py, you have to set Virtual Enviroment.
+
 ## Virtual Environment Settings
 
 ```bash 
