@@ -70,22 +70,23 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 
 # Motors
 Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Motors](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#motors).
-
+We need two motor subassemblies. Each one can be assembled as follows.
+<img width="1000" height="989" alt="Image" src="https://github.com/user-attachments/assets/48826f68-7391-4c78-9f94-8025019ff439" />
+<img width="1000" height="859" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
+<img width="1000" height="1029" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
 # Gripper
 
 ## Finger Assembly
 Insert bearings at the **red-circled** locations.  
-![Finger](docs/finger.png)
+<img width="1000" height="1189" alt="Image" src="https://github.com/user-attachments/assets/1a8166db-eabc-4d4d-bfb1-378a043d2473" />
 
 ## Gripper Assembly
-![Gripper Shell](docs/gripper_shell.png)  
-![Gripper](docs/gripper.png)
+<img width="1000" height="1287" alt="Image" src="https://github.com/user-attachments/assets/8e4ec863-8d67-47b9-b2ad-74216baeeba6" />
 
 
 # Mounting
 Standard interface: **30 mm PCD**, **4 × M4**.  
-![Base Mount](docs/base_mount.png)  
-![Mounted](docs/gripper_mounted.png)
+<img width="771" height="1735" alt="Image" src="https://github.com/user-attachments/assets/631a1e19-9ad4-454e-9977-7efd8571f48a" />
 
 ## Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The gripper has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
