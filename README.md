@@ -30,7 +30,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 - [Experiments](#experiments)  
   - [Experiment ① : Test Object (10 g)](#experiment---test-object-10-g)  
   - [Experiment ② : Test Object (30 g)](#experiment---test-object-30-g)  
-  - [Experiment ③ : Box (63 g)](#experiment---box-63-g)
+  - [Experiment ③ : Carton Box (63 g)](#experiment---carton-box-63-g)
 - [Contributors](#contributors)
 ---
 # Parts
@@ -71,9 +71,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 # Motors
 Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Motors](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#motors).
 We need two motor subassemblies. Each one can be assembled as follows.
-<img width="1000" height="989" alt="Image" src="https://github.com/user-attachments/assets/48826f68-7391-4c78-9f94-8025019ff439" />
-<img width="1000" height="859" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
-<img width="1000" height="1029" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
+<img width="512" height="508" alt="Image" src="https://github.com/user-attachments/assets/48826f68-7391-4c78-9f94-8025019ff439" />
+<img width="600" height="515" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
+<img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
 # Gripper
 
 ## Finger Assembly
@@ -81,7 +81,7 @@ Insert bearings at the **red-circled** locations.
 <img width="1000" height="1189" alt="Image" src="https://github.com/user-attachments/assets/1a8166db-eabc-4d4d-bfb1-378a043d2473" />
 
 ## Gripper Assembly
-<img width="1000" height="1287" alt="Image" src="https://github.com/user-attachments/assets/8e4ec863-8d67-47b9-b2ad-74216baeeba6" />
+<img width="800" height="1030" alt="Image" src="https://github.com/user-attachments/assets/8e4ec863-8d67-47b9-b2ad-74216baeeba6" />
 
 
 # Mounting
@@ -110,7 +110,7 @@ Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Ge
 if you finish [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) part and before Run main.py, you have to set Virtual Enviroment.
 
 ## Virtual Environment Settings
-open your Visual Studio Code terminal and copy and paste downside code at terminal  
+Please open Visual Studio Code terminal and copy and paste the code below to set your virtual environment.  
 
 ```bash 
 sudo apt-get install python3-venv
@@ -130,7 +130,7 @@ pip install --upgrade odrive
 ## Experiment ② : Test Object (30 g)
 ![Image](https://github.com/user-attachments/assets/28eefbeb-4b33-4c8f-abf6-829790dbf17d)
 
-## Experiment ③ : Box (63 g)
+## Experiment ③ : Carton Box (63 g)
 ![Image](https://github.com/user-attachments/assets/56f5fcad-eaad-489a-911b-5b9a04546464)
 
 
