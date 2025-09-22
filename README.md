@@ -121,6 +121,11 @@ pip install --upgrade odrive
 ```
 
 ## Motor Manipulation
+Our end-effector uses a **Coaxial 5-bar(Diamond) Linkage**. The controller accepts the endpoint position of the diamond tip, P(x,y) in (mm), and outputs the two motor commands 𝜃₁ and 𝜃₂. 
+
+<img width="537" height="476" alt="Image" src="https://github.com/user-attachments/assets/efec12e7-182d-42e9-b0f4-5cdb923fbcd1" />
+
+### Example : (-80,0) → (80,0) → (68,0) → (0,80) → (0,50) → (-80,0) → (-68,0)
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
 
 # Experiments
