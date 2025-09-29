@@ -1,6 +1,6 @@
 # Single-Finger Gripper for Scooping Object
 
-We present our **Single-Finger Gripper for High-Speed Scooping**, an latest robotic end-effector designed to scoop objects quickly.
+We present our spatula-type **Direct-Drive End-Effector** that rapidly inserts beneath an object and scoops it without ejection.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).
 
 <img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />\
