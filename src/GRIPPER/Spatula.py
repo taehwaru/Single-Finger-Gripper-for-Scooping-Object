@@ -8,8 +8,8 @@ from Actuator import *
 
 FREQUENCY = 50 #Hz
 
-SN_M1 = '394B34723331'
-SN_M2 = '396634703331'
+SN_M1 = 'serial_no_of_motor1'
+SN_M2 = 'serial_no_of_motor２'
 
 odrv0 = odrive.find_any(serial_number=SN_M1)
 odrv1 = odrive.find_any(serial_number=SN_M2)
