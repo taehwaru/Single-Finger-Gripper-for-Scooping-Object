@@ -21,7 +21,6 @@ def TestGetEncoder():
         sleep(0.3)
          #0.3 간격으로 motor_pos값 받아서 출력
 
-
 def TestCurrent():
     print("   [SPATULA / TEST CURRENT]")
     timeStep = 0.0
@@ -109,8 +108,6 @@ def Scoop():
         sleep(0.01)
     Spatula.SetIdleState()
        
-    
-
 def TestMotionStop():
     print("   [SPATULA / TEST MOTION]")
 
