@@ -3,8 +3,10 @@ from time import sleep
 import numpy as np
 import Spatula
 from GRIPPER.Spatula import FREQUENCY
-from fivebar import ik_5bar_angles_deg
-from fivebar import ik_fingerTip_to_Edge
+from fivebar import ik_5bar_Edge
+from fivebar import ik_5bar_fingerTip
+from fivebar import fk_5bar_Edge
+from fivebar import fk_5bar_fingerTip
 import RB5
 import numpy as np
 
@@ -13,13 +15,32 @@ import numpy as np
 # robot = rb.Cobot(ROBOT_IP)
 # rc = rb.ResponseCollector()
 
-def TestGetEncoder():
+def TestGetTheta():
     
     while True:
         pos = Spatula.GetMotorPosition()
-        print(f"motor_pos : [{pos[0]:.4f}, {pos[1]:.4f},{pos[2]:.4f} ,{pos[3]:.4f} ]  deg")
+        print(f"motor_pos : [{pos[0]:.4f}, {pos[1]:.4f}]  deg")
         sleep(0.3)
          #0.3 간격으로 motor_pos값 받아서 출력
+
+def TestGetEdge():
+    
+    while True:
+        pos = Spatula.GetMotorPosition()
+        xE, yE = fk_5bar_Edge(pos[0], pos[1])
+        print(f"Edge : [{xE:.4f}, {yE:.4f}]  mm")
+        sleep(0.3)
+         #0.3 간격으로 motor_pos값 받아서 출력
+
+
+def TestGetFingerTip():
+    
+    while True:
+        pos = Spatula.GetMotorPosition()
+        xT, yT = fk_5bar_fingerTip(pos[0], pos[1])        
+        print(f"fingerTip : [{xT:.4f}, {yT:.4f}]  mm")
+        sleep(0.3)
+         #0.3 간격으로 motor_pos값 받아서 출력         
 
 def TestCurrent():
     print("   [SPATULA / TEST CURRENT]")
@@ -49,7 +70,7 @@ def Test_fingerTip():
     Spatula.SetVelocityGain([0.2,0.2])
     xT=-80
     yT=0
-    th1_T, th2_T = ik_fingerTip_to_Edge(xT, yT)
+    th1_T, th2_T = ik_5bar_fingerTip(xT, yT)
     position0=[th1_T, th2_T]
     Spatula.SetControlState()
     Spatula.SetMotorPosition(position0)
