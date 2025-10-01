@@ -61,6 +61,14 @@ def _phi_to_user_deg(phi1, phi2):
     theta2 = _wrap_deg(_deg(theta2_base) - 45.0)
     return theta1, theta2
 
+def _user_deg_to_phi(theta1_deg, theta2_deg):
+    # θ(사용자, deg) -> φ(수학, rad)
+    tb1 = math.radians(_wrap_deg(theta1_deg + 45.0))
+    tb2 = math.radians(_wrap_deg(theta2_deg + 45.0))
+    phi1 = -tb1 - math.pi/2.0
+    phi2 =  tb2 - math.pi/2.0
+    return phi1, phi2
+
 # 두 원의 교점 구하기
 def _circle_circle_intersections(c1, r1, c2, r2, eps=eps_len):
     """
@@ -114,7 +122,7 @@ def _ik_T_to_E(xT: float, yT: float, *, require_right: bool = True):
     return xE, yE
 
 # ===== 공개 함수 =====
-def ik_5bar_angles_deg(x_user, y_user):
+def ik_5bar_Edge(x_user, y_user):
     """
     입력:  5bar linkage의  Edge 좌표
     출력:  (theta1_deg, theta2_deg)  -- 모터각=사용자각(도)
@@ -164,7 +172,7 @@ def ik_5bar_angles_deg(x_user, y_user):
     # 모든 후보 실패
     raise ValueError("; ".join(reasons) if reasons else "유효 해 없음")
 
-def ik_fingerTip_to_Edge(x_fingertip, y_fingertip):
+def ik_5bar_fingerTip(x_fingertip, y_fingertip):
     """
     입력:  Fingertip(T) 좌표 T=(xT, yT)
     출력:  (theta1_deg, theta2_deg)  -- 모터각=사용자각(도)
@@ -172,6 +180,86 @@ def ik_fingerTip_to_Edge(x_fingertip, y_fingertip):
     """
     
     xE, yE = _ik_T_to_E(x_fingertip, y_fingertip)
-    th1_deg, th2_deg = ik_5bar_angles_deg(xE, yE)
+    th1_deg, th2_deg = ik_5bar_Edge(xE, yE)
 
     return th1_deg, th2_deg
+
+def fk_5bar_Edge(theta1_deg: float, theta2_deg: float):
+    """
+    입력: θ1, θ2 (사용자/모터 각, deg)
+    출력: (xE_u, yE_u) — Edge E (사용자 좌표, mm)
+    방법: 5-bar 루프 폐쇄의 폐형식(두 원 교점) + cross 부호로 분기 고정(ELBOW_SIGN).
+    """
+    # 1) θ -> φ (수학좌표 각)
+    phi1, phi2 = _user_deg_to_phi(theta1_deg, theta2_deg)
+
+    # 2) 프록시멀 끝점 (math)
+    PLx = l1_left  * math.cos(phi1); PLy = l1_left  * math.sin(phi1)
+    PRx = l1_right * math.cos(phi2); PRy = l1_right * math.sin(phi2)
+
+    # 3) 두 원 교점 폐형식
+    L = float(l2_left); R = float(l2_right)
+    rx, ry = PRx - PLx, PRy - PLy
+    d = math.hypot(rx, ry)
+    if d < 1e-12 or d > (L + R) or d < abs(L - R):
+        raise ValueError("[FK-E] 조립 불가(교점 없음/특이).")
+
+    ux, uy = rx/d, ry/d
+    h = (L*L - R*R + d*d) / (2.0*d)
+    sq = L*L - h*h
+    if sq < 0.0: sq = 0.0
+    k = math.sqrt(sq)
+
+    # 기준점 P = PL + h*u, 수직 단위벡터 n
+    Px, Py = PLx + h*ux, PLy + h*uy
+    nx, ny = -uy, ux
+
+    # 후보 E±
+    Ex_p, Ey_p = Px + k*nx, Py + k*ny
+    Ex_m, Ey_m = Px - k*nx, Py - k*ny
+
+    # 4) cross(PR->PL, PL->E)의 부호로 분기 선택 (ELBOW_SIGN=-1)
+    def cross_to_E(Ex, Ey):
+        return rx*(Ey - PLy) - ry*(Ex - PLx)
+
+    if (1 if cross_to_E(Ex_p, Ey_p) >= 0.0 else -1) == -1:
+        Ex, Ey = Ex_p, Ey_p
+    else:
+        Ex, Ey = Ex_m, Ey_m
+
+    # 5) math -> user
+    xE_u, yE_u = _user_to_math(Ex, Ey)
+    return xE_u, yE_u
+
+
+# ===== Fingertip FK =====
+OFFSET_CW_DEG = 23.58  # E-PR을 시계로 23.58° 회전 → T-PR 방향
+
+def fk_5bar_fingerTip(theta1_deg: float, theta2_deg: float):
+    """
+    입력: θ1, θ2 (deg)
+    출력: (xT_u, yT_u) — Fingertip T (사용자 좌표, mm)
+    규칙: u = normalize(E-PR), w = R(CW 23.58°)*u, T = PR + T_to_P_R * w
+    """
+    # (a) E (user->math 포함)
+    xE_u, yE_u = fk_5bar_Edge(theta1_deg, theta2_deg)
+    xE_m, yE_m = _user_to_math(xE_u, yE_u)
+
+    # (b) PR (math)
+    _, phi2 = _user_deg_to_phi(theta1_deg, theta2_deg)
+    PRx = l1_right * math.cos(phi2); PRy = l1_right * math.sin(phi2)
+
+    # (c) u = normalize(E-PR)  (고정길이 R=l2_right 이용)
+    invR = 1.0 / float(l2_right)
+    dx, dy = (xE_m - PRx)*invR, (yE_m - PRy)*invR
+
+    # (d) CW 23.58° 회전 (수학좌표에선 음수)
+    ang = -math.radians(OFFSET_CW_DEG)
+    c, s = math.cos(ang), math.sin(ang)
+    ux, uy = c*dx - s*dy, s*dx + c*dy
+
+    # (e) T = PR + T_to_P_R * u  → user 반환
+    xT_m = PRx + T_to_P_R * ux
+    yT_m = PRy + T_to_P_R * uy
+    xT_u, yT_u = _user_to_math(xT_m, yT_m)
+    return xT_u, yT_u
