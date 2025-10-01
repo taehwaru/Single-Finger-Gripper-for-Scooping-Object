@@ -84,7 +84,7 @@ def Test_linkageEdge():
     Spatula.SetVelocityGain([0.2,0.2])
     xE = 0
     yE = 0
-    th1_E, th2_E = ik_5bar_angles_deg(xE, yE)
+    th1_E, th2_E = ik_5bar_Edge(xE, yE)
     position0=[th1_E, th2_E]
     Spatula.SetControlState()
     Spatula.SetMotorPosition(position0)
@@ -93,11 +93,11 @@ def Test_linkageEdge():
 def Scoop():
     x0=-10
     y0=130
-    shoulder01, shoulder02 = ik_fingerTip_to_Edge(x0, y0)
+    shoulder01, shoulder02 = ik_5bar_fingerTip(x0, y0)
 
     x1=100
     y1=10
-    shoulder11, shoulder12 = ik_fingerTip_to_Edge(x1, y1)
+    shoulder11, shoulder12 = ik_5bar_fingerTip(x1, y1)
     position1=[shoulder01,shoulder02] # start point
     Spatula.SetControlState()
     Spatula.SetMotorPosition(position1)
