@@ -7,19 +7,20 @@ l2_left  = 35.0   # 왼쪽 distal link 길이
 l2_right = 35.0   # 오른쪽 distal link 길이, |E - P_R|
 T_to_P_R = 127.37 # 오른쪽 Proximal link(P_R)에서 fingerTip(T)까지의 거리, |T - P_R|
 T_to_E = 96.32    # diamond linkage Edge(E)에서 fingerTip(T)까지의 거리, |T - E|
+OFFSET_CW_DEG = 23.58 # 오른쪽 distal link의 방향벡터(E - P_R/|E - P_R|)에서 CW로 23.58 [deg] 만큼 회전해야 방향벡터 (T - P_R)/|T - P_R|
 
-# ===== 각도 제약 (사용자각=모터각, 도) =====
+# ===== 각도 제약 (θ(사용자각 = 모터각, deg)) =====
 # 사용자각(=모터각): 수직↓=0°, θ1(왼쪽 기울수록 +), θ2(오른쪽 기울수록 +)
 theta1_min_deg = -161.2
 theta1_max_deg =   76.0
 theta2_min_deg = -144.4
 theta2_max_deg =   93.4
 
-# 두 모터 각도 합 제약 (도):  SUM_MIN < θ1+θ2 < SUM_MAX
+# 두 모터 각도 합 제약 (deg): SUM_MIN < θ1+θ2 < SUM_MAX
 sum_min_deg = -70.0
 sum_max_deg =  -7.0
 
-# 허용오차(도)
+# 허용오차(deg)
 eps_ang = 1e-6 # unit : degree
 eps_len = 1e-9 # unit : mm
 
@@ -30,14 +31,14 @@ def _deg(r): return r * 180.0 / math.pi
 def _wrap_deg(a): return (a + 180.0) % 360.0 - 180.0            # [-180, 180)
 def _deg360(r): return (_deg(r)) % 360.0                        # [0, 360)
 
-# 사용자 좌표(+x=왼, +y=아래) <-> 수학 좌표(+x=오른, +y=위)
+# 사용자 좌표(xu = [-1, 0, 0], yu = [0, -1, 0]) ↔ 수학 직교좌표계(xm = [1, 0, 0], ym = [0, 1, 0]) (ㅈ : 그냥 180도 도는 rotation matrix라고 생각하면 됨)
 def _user_to_math(xu, yu): return -xu, -yu
 
 # 각 측의 반경(필요조건)
 def _r_range_left():  return abs(l1_left  - l2_left),  (l1_left  + l2_left)
 def _r_range_right(): return abs(l1_right - l2_right), (l1_right + l2_right)
 
-# IK 후보(수학좌표)
+# IK 후보(직교좌표계)
 def _ik_candidates_math(xm, ym, eps=eps_len):
     r = math.hypot(xm, ym)
     if r < eps: return []
@@ -49,27 +50,26 @@ def _ik_candidates_math(xm, ym, eps=eps_len):
     cR = _clamp((l1_right*l1_right + r*r - l2_right*l2_right) / (2.0*l1_right*r), -1.0, 1.0)
     alphaL = math.acos(cL); alphaR = math.acos(cR)
     tm = math.atan2(ym, xm)
-    # 두 분기 (phi1=왼, phi2=오)
+    # 두 분기 (phi1=왼쪽, phi2=오)
     return [(tm + alphaL, tm - alphaR), (tm - alphaL, tm + alphaR)]
 
 # φ(수학각, rad) → θ(사용자/모터각, deg)
-# (현재 보정: theta = base - 45°  — m1 0° ↔ φ1=-45°, m2 0° ↔ φ2=-45°)
 def _phi_to_user_deg(phi1, phi2):
     theta1_base = -_wrap_pi(phi1 + math.pi/2.0)
     theta2_base =  _wrap_pi(phi2 + math.pi/2.0)
-    theta1 = _wrap_deg(_deg(theta1_base) - 45.0)
+    theta1 = _wrap_deg(_deg(theta1_base) - 45.0) # -45[deg] 보정 이유 : 모터에 -45 [deg]로 proximal link가 장착되어 있음
     theta2 = _wrap_deg(_deg(theta2_base) - 45.0)
     return theta1, theta2
 
+# θ(사용자, deg) → φ(수학, rad)
 def _user_deg_to_phi(theta1_deg, theta2_deg):
-    # θ(사용자, deg) -> φ(수학, rad)
     tb1 = math.radians(_wrap_deg(theta1_deg + 45.0))
     tb2 = math.radians(_wrap_deg(theta2_deg + 45.0))
     phi1 = -tb1 - math.pi/2.0
     phi2 =  tb2 - math.pi/2.0
     return phi1, phi2
 
-# 두 원의 교점 구하기
+# 두 원의 교점 구하기(cosine 법칙 이용)
 def _circle_circle_intersections(c1, r1, c2, r2, eps=eps_len):
     """
     두 원 (c1,r1), (c2,r2)의 교점 0/1/2개 반환.
@@ -88,9 +88,9 @@ def _circle_circle_intersections(c1, r1, c2, r2, eps=eps_len):
     ux, uy = dx/d, dy/d
     px, py = x1 + a*ux, y1 + a*uy
     nx, ny = -uy, ux
-    if h < eps:  # 접점 1개
+    if h < eps:  # 두 원이 접하면 접점 한 개라 분기 선택 없어도 됨 → 점 하나(인덱스 0 한 개)
         return [(px, py)]
-    return [(px + h*nx, py + h*ny), (px - h*nx, py - h*ny)]  # [left, right]
+    return [(px + h*nx, py + h*ny), (px - h*nx, py - h*ny)]  # [left, right] → 기준 벡터의 왼쪽, 오른쪽 중 어느 점에 위치한 교점인지 → 점 두 개(인덱스 0, 1 두 개)
 
 # 두 원의 교점 이용해 fingertip 좌표 바탕으로 5bar edge 구하기
 def _ik_T_to_E(xT: float, yT: float, *, require_right: bool = True):
@@ -99,7 +99,7 @@ def _ik_T_to_E(xT: float, yT: float, *, require_right: bool = True):
     규칙:  PR_left = ⊙(O,l1_right) ∩ ⊙(T,T_to_P_R)의 (O→T 기준) left
           E_right = ⊙(T,T_to_E) ∩ ⊙(PR_left,l2_right)의 (T→PR_left 기준) right
     출력:  (x_edge, y_edge)
-    정책:  E가 접점(교점 1개)이면 그 점을 그대로 반환(필터링 없음).
+    정책:  E가 접점(교점 1개)이면 그 점을 그대로 반환(필터링 없음)
     """
     O = (0.0, 0.0)
     T = (xT, yT)
@@ -108,16 +108,16 @@ def _ik_T_to_E(xT: float, yT: float, *, require_right: bool = True):
     PR_list = _circle_circle_intersections(O, l1_right, T, T_to_P_R)
     if not PR_list:
         raise ValueError("[E2T] PR 없음")
-    PR_left = PR_list[0]  # 규칙상 [0]=left (접점이면 1개)
+    PR_left = PR_list[0] # 규칙상(_circle_circle_intersection 참고) [0]=left (접점이면 1개)
 
     # 2) E_right (접점이면 그 한 점 사용)
     E_list = _circle_circle_intersections(T, T_to_E, PR_left, l2_right)
     if not E_list:
         raise ValueError("[E2T] E 없음")
     if len(E_list) == 1:
-        xE, yE = E_list[0]      # 접점 1개
+        xE, yE = E_list[0] # 접점 1개
     else:
-        xE, yE = E_list[1]      # 규칙상 [1]=right
+        xE, yE = E_list[1] # 규칙상 [1]=right
 
     return xE, yE
 
@@ -140,7 +140,7 @@ def ik_5bar_Edge(x_user, y_user):
 
     reasons = []
     for phi1, phi2 in cands:
-        # --- (1) 프록시멀 각도 순서 제약 ---
+        # (1) proximal link 순서 제약(ㅈ : motor1에 연결된 게 핑거팁에서 먼 쪽, motor2에 연결된 게 핑거팁에서 가까운 쪽의 proximal link여야 함)
         phi1_d = _deg360(phi1)
         phi2_d = _deg360(phi2)
         if (phi2_d - phi1_d > 0):
@@ -152,21 +152,20 @@ def ik_5bar_Edge(x_user, y_user):
                 reasons.append(f"[IK] proximal angle order (φ1={phi1_d:.1f}° !< φ2={phi2_d:.1f}°)")
                 continue
 
-        # --- (2) 사용자각(=모터각) ---
+        # (2) 사용자각(=모터각)
         th1_deg, th2_deg = _phi_to_user_deg(phi1, phi2)
 
-        # --- (3) 개별 범위 ---
+        # (3) 개별 범위
         if not (theta1_min_deg < th1_deg < theta1_max_deg):
             reasons.append(f"[IK] motor1 angle range (θ1 범위 위반) ({theta1_min_deg} < {th1_deg:.1f} < {theta1_max_deg})"); continue
         if not (theta2_min_deg < th2_deg < theta2_max_deg):
             reasons.append(f"[IK] motor2 angle range (θ2 범위 위반) ({theta2_min_deg} < {th2_deg:.1f} < {theta2_max_deg})"); continue
 
-        # --- (4) 합 범위 ---
+        # (4) 합 범위
         s = th1_deg + th2_deg
         if not (sum_min_deg < s < sum_max_deg):
             reasons.append(f"[IK] motor angle sum range(θ1+θ2 합 범위 위반) ({sum_min_deg} < {s:.1f} < {sum_max_deg})"); continue
 
-        # 통과 → 반환
         return th1_deg, th2_deg
 
     # 모든 후보 실패
@@ -188,52 +187,31 @@ def fk_5bar_Edge(theta1_deg: float, theta2_deg: float):
     """
     입력: θ1, θ2 (사용자/모터 각, deg)
     출력: (xE_u, yE_u) — Edge E (사용자 좌표, mm)
-    방법: 5-bar 루프 폐쇄의 폐형식(두 원 교점) + cross 부호로 분기 고정(ELBOW_SIGN).
+    규칙: c1=PL, c2=PR로 원-원 교점 계산 → [left,right] 중 항상 right(=index 1) 선택
     """
-    # 1) θ -> φ (수학좌표 각)
+    # (1) θ -> φ
     phi1, phi2 = _user_deg_to_phi(theta1_deg, theta2_deg)
 
-    # 2) 프록시멀 끝점 (math)
-    PLx = l1_left  * math.cos(phi1); PLy = l1_left  * math.sin(phi1)
-    PRx = l1_right * math.cos(phi2); PRy = l1_right * math.sin(phi2)
+    # (2) P_R 좌표
+    PL_m = (l1_left  * math.cos(phi1), l1_left  * math.sin(phi1))
+    PR_m = (l1_right * math.cos(phi2), l1_right * math.sin(phi2))
 
-    # 3) 두 원 교점 폐형식
-    L = float(l2_left); R = float(l2_right)
-    rx, ry = PRx - PLx, PRy - PLy
-    d = math.hypot(rx, ry)
-    if d < 1e-12 or d > (L + R) or d < abs(L - R):
-        raise ValueError("[FK-E] 조립 불가(교점 없음/특이).")
+    # (3) 두 원 교점: [left, right]
+    E_list = _circle_circle_intersections(PL_m, float(l2_left), PR_m, float(l2_right))
 
-    ux, uy = rx/d, ry/d
-    h = (L*L - R*R + d*d) / (2.0*d)
-    sq = L*L - h*h
-    if sq < 0.0: sq = 0.0
-    k = math.sqrt(sq)
+    if not E_list:
+        raise ValueError("[FK-E] E 없음(조립 불가)")
+    
+    # if len(E_list) == 1:
+    #     xE_m, yE_m = E_list[0] # 접점 1개
+    # else:
+    #     xE_m, yE_m = E_list[1] # 규칙상 [1] = right
+   
+    xE_m, yE_m = E_list[1] # 두 distal link가 수평이 돼서 distal link로 그린 두 원이 접할 정도로 proximal link가 벌어지지 않음. 만약 가능하면 위에 주석처리한 조건문 사용해야 함.
 
-    # 기준점 P = PL + h*u, 수직 단위벡터 n
-    Px, Py = PLx + h*ux, PLy + h*uy
-    nx, ny = -uy, ux
-
-    # 후보 E±
-    Ex_p, Ey_p = Px + k*nx, Py + k*ny
-    Ex_m, Ey_m = Px - k*nx, Py - k*ny
-
-    # 4) cross(PR->PL, PL->E)의 부호로 분기 선택 (ELBOW_SIGN=-1)
-    def cross_to_E(Ex, Ey):
-        return rx*(Ey - PLy) - ry*(Ex - PLx)
-
-    if (1 if cross_to_E(Ex_p, Ey_p) >= 0.0 else -1) == -1:
-        Ex, Ey = Ex_p, Ey_p
-    else:
-        Ex, Ey = Ex_m, Ey_m
-
-    # 5) math -> user
-    xE_u, yE_u = _user_to_math(Ex, Ey)
+    xE_u, yE_u = _user_to_math(xE_m, yE_m)
     return xE_u, yE_u
 
-
-# ===== Fingertip FK =====
-OFFSET_CW_DEG = 23.58  # E-PR을 시계로 23.58° 회전 → T-PR 방향
 
 def fk_5bar_fingerTip(theta1_deg: float, theta2_deg: float):
     """
@@ -241,25 +219,25 @@ def fk_5bar_fingerTip(theta1_deg: float, theta2_deg: float):
     출력: (xT_u, yT_u) — Fingertip T (사용자 좌표, mm)
     규칙: u = normalize(E-PR), w = R(CW 23.58°)*u, T = PR + T_to_P_R * w
     """
-    # (a) E (user->math 포함)
+    # (1) θ → φ
     xE_u, yE_u = fk_5bar_Edge(theta1_deg, theta2_deg)
     xE_m, yE_m = _user_to_math(xE_u, yE_u)
 
-    # (b) PR (math)
+    # (2) P_R 좌표
     _, phi2 = _user_deg_to_phi(theta1_deg, theta2_deg)
-    PRx = l1_right * math.cos(phi2); PRy = l1_right * math.sin(phi2)
+    xPR = l1_right * math.cos(phi2); yPR = l1_right * math.sin(phi2)
 
-    # (c) u = normalize(E-PR)  (고정길이 R=l2_right 이용)
+    # (3) distal link 방향벡터((E - P_R)/|E - P_R|) 구하기
     invR = 1.0 / float(l2_right)
-    dx, dy = (xE_m - PRx)*invR, (yE_m - PRy)*invR
+    dx, dy = (xE_m - xPR)*invR, (yE_m - yPR)*invR
 
-    # (d) CW 23.58° 회전 (수학좌표에선 음수)
+    # (4) CW 23.58 [deg] 회전 → (T - P_R)/|T - P_R|의 방향벡터 구하기
     ang = -math.radians(OFFSET_CW_DEG)
     c, s = math.cos(ang), math.sin(ang)
     ux, uy = c*dx - s*dy, s*dx + c*dy
 
-    # (e) T = PR + T_to_P_R * u  → user 반환
-    xT_m = PRx + T_to_P_R * ux
-    yT_m = PRy + T_to_P_R * uy
+    # (5) T = PR + T_to_P_R * u  → 사용자 좌표로 변환
+    xT_m = xPR + T_to_P_R * ux
+    yT_m = yPR + T_to_P_R * uy
     xT_u, yT_u = _user_to_math(xT_m, yT_m)
     return xT_u, yT_u
