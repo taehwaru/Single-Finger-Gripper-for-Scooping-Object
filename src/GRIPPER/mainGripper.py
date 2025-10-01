@@ -9,8 +9,10 @@ import TestMotion
 ######## select control signal ########
 #controlSignal = 'testFinger'
 #controlSignal = 'testEdge'
-controlSignal = 'Scoop'
-#controlSignal = 'testGetEncoder'
+#controlSignal = 'Scoop'
+#controlSignal = 'testGetTheta'
+controlSignal = 'testGetEdge'
+#controlSignal = 'testGetFingerTip'
 #controlSignal = 'testMotionStop'
 ######################################
 
@@ -24,8 +26,14 @@ def switchCase(case):
     elif case == 'Scoop' :
         TestMotion.Scoop()
 
-    elif case == 'testGetEncoder' :
-        TestMotion.TestGetEncoder()
+    elif case == 'testGetTheta' :
+        TestMotion.TestGetTheta()
+
+    elif case == 'testGetEdge' :
+        TestMotion.TestGetEdge()
+
+    elif case == 'testGetFingerTip' :
+        TestMotion.TestGetFingerTip()        
 
     elif case == 'testMotionStop' :
         TestMotion.TestMotionStop()    
