@@ -131,14 +131,14 @@ Our end-effector uses a **Coaxial 5-bar(Diamond) Linkage**. The controller accep
 
 # Experiments
 
-## Experiment ① : Test Object (10 g)
-![Image](https://github.com/user-attachments/assets/c4ebd16a-ba07-4b57-8cf1-6ba6bf7666ab)
+## Experiment ① : Test Object (30 g)
+![Image](https://github.com/user-attachments/assets/8e143c2e-c073-407b-bec9-ceb2e2c65446)
 
-## Experiment ② : Test Object (30 g)
-![Image](https://github.com/user-attachments/assets/28eefbeb-4b33-4c8f-abf6-829790dbf17d)
+## Experiment ② : Test Object (50 g)
+![Image](https://github.com/user-attachments/assets/ee2b3c5d-b702-479b-9f97-769e5a075928)
 
 ## Experiment ③ : Carton Box (63 g)
-![Image](https://github.com/user-attachments/assets/56f5fcad-eaad-489a-911b-5b9a04546464)
+![Image](https://github.com/user-attachments/assets/af97a3cc-2167-4f34-87b2-e2fcbdd92bf5)
 
 
 # Contributors
