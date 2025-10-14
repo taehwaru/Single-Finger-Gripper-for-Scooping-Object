@@ -129,10 +129,10 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 <img width="747" height="581" alt="Image" src="https://github.com/user-attachments/assets/95959932-0af7-49fd-b938-f4be5eea828d" />
 
 ### Example ① : input E
-![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
+![Image](https://github.com/user-attachments/assets/f394a5d9-2902-4c3a-8db1-625cd441564b)
 
 ### Example ② : input T
-
+![Image](https://github.com/user-attachments/assets/edb17581-2bad-49e1-a695-a0d018088105)
 
 # Experiments
 
