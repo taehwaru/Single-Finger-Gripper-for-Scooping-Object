@@ -3,8 +3,9 @@
 We present our spatula-type **Direct-Drive End-Effector** that rapidly inserts beneath an object and scoops it without ejection.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).
 
-<img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />\
-<img width="1000" height="1000" alt="Image" src="https://github.com/user-attachments/assets/44b333e8-3319-4073-98d7-50a0dfb12ab4" />
+<img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />　
+<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/690a4544-f94f-4f63-9928-05304e68aa5d" />
+<img width="1000" height="380" alt="Image" src="https://github.com/user-attachments/assets/658a1eda-8ab0-41ec-b8e5-abd862391134" />
 
 **Related repos**
 * [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping)
@@ -28,8 +29,8 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Virtual Environment Settings](#virtual-environment-settings)
   - [Motor Manipulation](#motor-manipulation)  
 - [Experiments](#experiments)  
-  - [Experiment ① : Test Object (10 g)](#experiment---test-object-10-g)  
-  - [Experiment ② : Test Object (30 g)](#experiment---test-object-30-g)  
+  - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
+  - [Experiment ② : Test Object (30 g)](#experiment---test-object-50-g)  
   - [Experiment ③ : Carton Box (63 g)](#experiment---carton-box-63-g)
 - [Contributors](#contributors)
 ---
@@ -47,7 +48,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 
 ### 3D Printing
 - **Gripper**
-<img width="539" height="560" alt="Image" src="https://github.com/user-attachments/assets/5da362db-3cf8-4530-8134-9ac9b487d681" />
+<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/690a4544-f94f-4f63-9928-05304e68aa5d" />
 
   - [distal_link](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_link.stl) × 2  
   - [distal_tip_cap](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_tip.stl) × 1  
@@ -122,12 +123,16 @@ pip install --upgrade odrive
 ```
 
 ## Motor Manipulation
-Our end-effector uses a **Coaxial 5-bar(Diamond) Linkage**. The controller accepts the endpoint position of the diamond tip, P(x,y) in (mm), and outputs the two motor commands 𝜃₁ and 𝜃₂. 
+Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
-<img width="537" height="476" alt="Image" src="https://github.com/user-attachments/assets/efec12e7-182d-42e9-b0f4-5cdb923fbcd1" />
+<img width="747" height="581" alt="Image" src="https://github.com/user-attachments/assets/e0bc0add-03d9-4288-acfd-0520875f1575" />
+<img width="747" height="581" alt="Image" src="https://github.com/user-attachments/assets/95959932-0af7-49fd-b938-f4be5eea828d" />
 
-### Example : (-80,0) → (80,0) → (68,0) → (0,80) → (0,50) → (-80,0) → (-68,0)
+### Example ① : input E
 ![Image](https://github.com/user-attachments/assets/085ccb89-bac7-4e0a-90ff-e5287afef652)
+
+### Example ② : input T
+
 
 # Experiments
 
