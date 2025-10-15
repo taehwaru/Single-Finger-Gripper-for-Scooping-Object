@@ -79,8 +79,7 @@ We need two motor subassemblies. Each one can be assembled as follows.
 
 # Gripper
 
-## Finger Assembly
-Insert bearings at the **red-circled** locations.  
+## Finger Assembly  
 <img width="1000" height="1189" alt="Image" src="https://github.com/user-attachments/assets/1a8166db-eabc-4d4d-bfb1-378a043d2473" />
 
 ## Gripper Assembly
