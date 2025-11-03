@@ -144,6 +144,8 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 ## Experiment ③ : Carton Box (63 g)
 ![Image](https://github.com/user-attachments/assets/af97a3cc-2167-4f34-87b2-e2fcbdd92bf5)
 
+## Experiment ④ : iphone13 mini (155 g)
+![Image](https://github.com/user-attachments/assets/b9216237-a5b9-4b81-b98c-ca86de7b9b4e)
 
 # Contributors
 - **Ji-woong Choi**, chjwng@pusan.ac.kr
