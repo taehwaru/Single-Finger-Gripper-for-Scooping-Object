@@ -90,7 +90,7 @@ We explicitly define the direction of the rotor to be the direction the hexagona
 
 
 ### Calibrate Odrive
-ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https://gui.odriverobotics.com/inspector) In the configuration tab in this GUI, You can set up the motordriver's configuration.
+ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https://gui.odriverobotics.com/inspector) In the configuration tab in this GUI, You can set up the motordriver's configuration. (this step need motor move freely so you don't set like Calibrate Zero Position diagram)
 - **Power source**
   - DC bus overvoltage trip level: 26
   - DC bus undervoltage trip level: 22
