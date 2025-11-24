@@ -84,7 +84,8 @@ We need two motor subassemblies. Each one can be assembled as follows.
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
 
 We explicitly define the direction of the rotor to be the direction the hexagonal logo on the rotor is pointing at, and the zero position of the motor to be when the direction of the motor is pointing at the opposite direction of the power port on the stator.
-(사진)
+<img width="1500" height="1200" alt="motor_frame" src="https://github.com/user-attachments/assets/932ef56f-18b9-42e8-9efb-6a105ce4e6b5" />
+
 
 
 
@@ -123,6 +124,10 @@ ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https
 
 ### Calibrate Zero Position
 Here we calibrate the zero position of the motor. Mount the actuator on the calibration stand and install the calibration arm onto the actuator according to the diagram
+<img width="1000" height="1200" alt="motor-calib-stand" src="https://github.com/user-attachments/assets/ed182651-2a10-4a5d-a702-55116d22c98d" />
+Put the motor into zero position as show in the diagram below. Press down the calibration arm to make sure the stand and arm touch tightly.
+<img width="1000" height="1200" alt="calib-zero" src="https://github.com/user-attachments/assets/3be51595-16b0-4aeb-8c0c-2c59aba9a498" />
+
 
 # Gripper
 
