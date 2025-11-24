@@ -16,15 +16,18 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 # Table of Contents
 - [Parts](#parts)  
   - [Bill of Materials (BOM)](#bill-of-materials-bom)  
-    - [Off-the-Shelf Parts](#off-the-shelf-parts)  
-    - [3D Printing](#3d-printing)
-- [Motors](#motors)  
+      - [Off-the-Shelf Parts](#off-the-shelf-parts)  
+      - [3D Printing](#3d-printing)
+- [Motors](#motors)
+  - [Motor Calibration](#motor-calibration)
+    - [Calibrate ODrives](#calibrate-odrive)
+    - [Calibrate Zero Position](#calibrate-zero-position)  
 - [Gripper](#gripper)  
   - [Finger Assembly](#finger-assembly)  
   - [Gripper Assembly](#gripper-assembly)
 - [Mounting](#mounting)  
   - [Customization](#customization)
-- [Software](#software)  
+- [Software](#software)
   - [Versions](#versions)
   - [Virtual Environment Settings](#virtual-environment-settings)
   - [Motor Manipulation](#motor-manipulation)  
@@ -76,6 +79,50 @@ We need two motor subassemblies. Each one can be assembled as follows.
 <img width="512" height="508" alt="Image" src="https://github.com/user-attachments/assets/48826f68-7391-4c78-9f94-8025019ff439" />
 <img width="600" height="515" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
 <img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
+
+## Motor Calibration
+Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
+
+We explicitly define the direction of the rotor to be the direction the hexagonal logo on the rotor is pointing at, and the zero position of the motor to be when the direction of the motor is pointing at the opposite direction of the power port on the stator.
+(사진)
+
+
+
+### Calibrate Odrive
+ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https://gui.odriverobotics.com/inspector) In the configuration tab in this GUI, You can set up the motordriver's configuration.
+- **Power source**
+  - DC bus overvoltage trip level: 26
+  - DC bus undervoltage trip level: 22
+  - DC max positive current: 'Leave it blank'
+  - DC max negative current: -0.5
+
+- **Motor**
+  - Type: Gimbal
+  - Phase resistance: 2.675
+  - Pole pairs: 7
+  - KV: 26
+  - Current limit: 1
+  - Motor calib current: 10
+  - Motor calib voltage: 2
+  - Lock-in spin current: 10
+
+- **Encoder**
+  - Type: SPI (AMS protocol)
+  - nCS pin: GPIO 12
+
+- **Control mode**
+  - control mode: Position Control
+  - Soft velocity limit: 10
+  - Hard velocity limit: 13.75
+  - Torque limit: 0.192
+
+- **Interface**
+  - UART (115200)
+
+
+
+### Calibrate Zero Position
+Here we calibrate the zero position of the motor. Mount the actuator on the calibration stand and install the calibration arm onto the actuator according to the diagram
 
 # Gripper
 
