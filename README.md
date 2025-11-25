@@ -89,6 +89,7 @@ We need two motor subassemblies. Each one can be assembled as follows.
 <img width="1834" height="998" alt="Image" src="https://github.com/user-attachments/assets/2c31b6ae-32ce-4414-ac66-0b0831af56c0" />
 
 # Encoder connection
+<img width="1837" height="1189" alt="Image" src="https://github.com/user-attachments/assets/dfc7c40a-b6ca-4473-9a47-8eb678853f31" />
 
 ## Motor Calibration
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
