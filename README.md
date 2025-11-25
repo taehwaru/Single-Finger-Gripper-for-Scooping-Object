@@ -39,7 +39,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - [Before running the code](#before-running-the-code)
     - [Let the robot Single-Finger Gripper for Scooping Object](#let-the-robot-single-finger-gripper-for-scooping-object)
     - [How to customize control parameters](#how-to-customize-control-parameters)
-  - [Motor Manipulation](#motor-manipulation)  
+  - [Motor Manipulation](#motor-manipulation)
+    - [Example ① : input E](#example---input-e)
+    - [Example ② : input T](#example---input-e)
 - [Experiments](#experiments)  
   - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
   - [Experiment ② : Test Object (30 g)](#experiment---test-object-50-g)  
@@ -51,16 +53,16 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 
 ## Bill of Materials (BOM)
 ### Off-the-Shelf Parts
-- [T-Motor GB54-2](https://store.tmotor.com/goods-445-GB54-2.html) × 4  
-- [ODrive S1](https://shop.odriverobotics.com/products/odrive-s1) × 4  
-- [AS5048A magnetic encoder + solid magnet](https://ko.aliexpress.com/item/1005001686457940.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.16.79211d4aZISBpE&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=d12cc80d-7f2f-4472-b774-95bc286dbf2c&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:d12cc80d-7f2f-4472-b774-95bc286dbf2c,tpp_buckets:668%232846%238116%232002&pdp_ext_f=%7B%22order%22%3A%225%22%2C%22eval%22%3A%221%22%2C%22sceneId%22%3A%2230050%22%2C%22fromPage%22%3A%22recommend%22%7D&pdp_npi=6%40dis%21KRW%2125633%2117724%21%21%2117.86%2112.35%21%40213ba0c517586181047795086e8a83%2112000017134313267%21rec%21KR%21%21ABXZ%211%210%21n_tag%3A-29910%3Bd%3A7e1d6246%3Bm03_new_user%3A-29895%3BpisId%3A5000000182996635&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A%7Cx_object_id%3A1005001686457940%7C_p_origin_prod%3A#nav-review) × 4
+- [T-Motor GB54-2](https://store.tmotor.com/goods-445-GB54-2.html) × 2  
+- [ODrive S1](https://shop.odriverobotics.com/products/odrive-s1) × 2  
+- [AS5048A magnetic encoder + solid magnet](https://ko.aliexpress.com/item/1005001686457940.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.16.79211d4aZISBpE&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=d12cc80d-7f2f-4472-b774-95bc286dbf2c&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:d12cc80d-7f2f-4472-b774-95bc286dbf2c,tpp_buckets:668%232846%238116%232002&pdp_ext_f=%7B%22order%22%3A%225%22%2C%22eval%22%3A%221%22%2C%22sceneId%22%3A%2230050%22%2C%22fromPage%22%3A%22recommend%22%7D&pdp_npi=6%40dis%21KRW%2125633%2117724%21%21%2117.86%2112.35%21%40213ba0c517586181047795086e8a83%2112000017134313267%21rec%21KR%21%21ABXZ%211%210%21n_tag%3A-29910%3Bd%3A7e1d6246%3Bm03_new_user%3A-29895%3BpisId%3A5000000182996635&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A%7Cx_object_id%3A1005001686457940%7C_p_origin_prod%3A#nav-review) × 2
 - [Bearings — OD 100 mm / ID 6 mm](https://kr.misumi-ec.com/vona2/detail/221000058378/?KWSearch=%eb%b2%a0%ec%96%b4%eb%a7%81&searchFlow=results2products) × 3  
 - [Wire terminal box](https://freeship.co.kr/goods/content.asp?guid=14063350&cate=&sitecate=mini) × 1  
 - [Shielded cable](https://smartstore.naver.com/bantolmarket/products/10633794496) × 1  
 - [3-phase cable](https://smartstore.naver.com/shipdiy/products/7890381050?) × 3
 
 ### 3D Printing
-- **Gripper**
+- **Single Finger**
 <img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/690a4544-f94f-4f63-9928-05304e68aa5d" />
 
   - [distal_link](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_link.stl) × 2  
