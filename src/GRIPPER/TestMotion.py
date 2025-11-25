@@ -68,13 +68,13 @@ def Test_fingerTip():
     Spatula.SetControlState()
     Spatula.SetStiffness([50,50])
     Spatula.SetVelocityGain([0.2,0.2])
-    xT=-80
-    yT=0
+    xT, yT= 100, 0
     th1_T, th2_T = ik_5bar_fingerTip(xT, yT)
     position0=[th1_T, th2_T]
     Spatula.SetControlState()
     Spatula.SetMotorPosition(position0)
     sleep(0.3)    
+
 
 def Test_linkageEdge():
     print("Edge of the 5-bar linkage(E) Control")
@@ -91,44 +91,42 @@ def Test_linkageEdge():
     sleep(0.3)    
             
 def Scoop():
-    x0=-10
+    x0=-40
     y0=130
     shoulder01, shoulder02 = ik_5bar_fingerTip(x0, y0)
 
     x1=100
     y1=10
     shoulder11, shoulder12 = ik_5bar_fingerTip(x1, y1)
-    position1=[shoulder01,shoulder02] # start point
+    initialConfiguration=[shoulder01,shoulder02] # start point
     Spatula.SetControlState()
-    Spatula.SetMotorPosition(position1)
+    Spatula.SetMotorPosition(initialConfiguration)
     sensitivity=10 # 오차 범위 ±5
     sensi=sensitivity*0.5
     pos = Spatula.GetMotorPosition()
-    position12=[shoulder11, shoulder12]# end point
+    goalConfiguration=[shoulder11, shoulder12]# end point
     pgain=[15,15]
     softmax=[4,4]
-    torquemax=[2,2]
-    
     cnt=0  
     sleep(3)
     
     while True:
         pos = Spatula.GetMotorPosition()
-        print(f"motor_pos : [{pos[0]:.4f}, {pos[1]:.4f}]  deg")
+        x_cur, y_cur = fk_5bar_fingerTip(pos[0], pos[1])
+        print(f"tip_pos: [{x_cur:.2f}, {y_cur:.2f}] mm")
         if (cnt==1):
             break
-        if ((pos[0] < position1[0]-sensi or pos[0] > position1[0]+sensi or pos[1] < position1[1]-sensi or pos[1] > position1[1]+sensi ) and (cnt==0)): # 0.01초 간격으로 모터 위치 확인
-             Spatula.Settorquesoftmax(torquemax)
+        if ((pos[0] < initialConfiguration[0]-sensi or initialConfiguration[0] > initialConfiguration[0]+sensi or pos[1] < initialConfiguration[1]-sensi or pos[1] > initialConfiguration[1]+sensi ) and (cnt==0)): # 0.01초 간격으로 모터 위치 확인
              Spatula.SetCurrentsoftmax(softmax)
              Spatula.SetStiffness(pgain)
              sleep(0.1)
-             Spatula.SetMotorPosition(position12)
+             Spatula.SetMotorPosition(goalConfiguration)
              sleep(5)
              cnt+=1
              
         sleep(0.01)
     Spatula.SetIdleState()
-       
+
 def TestMotionStop():
     print("   [SPATULA / TEST MOTION]")
 
