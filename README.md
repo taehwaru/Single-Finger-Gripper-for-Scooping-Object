@@ -223,6 +223,13 @@ controlSignal = 'Scoop'
 #controlSignal = 'testGetFingerTip'
 #controlSignal = 'testMotionStop'
 ```
+### Let the robot Single-Finger Gripper for Scooping Object
+Run main.py.
+```bash 
+python3 main.py
+```
+### How to customize control parameters
+
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
