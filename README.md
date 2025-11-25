@@ -34,6 +34,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Prerequisites](#prerequisites)
     - [Versions](#versions)
     - [Virtual Environment Settings](#virtual-environment-settings)
+    - [How to connect Robot Arm and PC](#how-to-connect-robot-arm-and-pc)
   - [Run Single-Finger Gripper for Scooping Object](#run-single-finger-gripper-for-scooping-object)
     - [Before running the code](#before-running-the-code)
     - [Let the robot Single-Finger Gripper for Scooping Object](#let-the-robot-single-finger-gripper-for-scooping-object)
@@ -210,6 +211,14 @@ pip install --upgrade odrive
 ```
 if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
 
+### How to connect Robot Arm and PC
+
+(1) connect RB5-850 control box and PC with lan cable.
+
+(2) Go to network in Ubuntu settings and enter the information as shown in the picture below.
+<img width="755" height="602" alt="Screenshot from 2025-11-25 19-53-14" src="https://github.com/user-attachments/assets/1f70a011-85f0-4598-8712-b0eb56a0e717" />
+
+
 ## Run Single-Finger Gripper for Scooping Object
 ### Before running the code
 Modify GRIPPER/Spatula.py as follows.
@@ -271,6 +280,8 @@ torque_soft_max=[0.8,0.8]
 torque_soft_min=[-0.8,-0.8]
 sensi=5
 ```
+
+
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
