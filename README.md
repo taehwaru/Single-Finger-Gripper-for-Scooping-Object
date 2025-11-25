@@ -248,7 +248,7 @@ python3 main.py
 
 - **initialConfiguration**:Initial configuration
 - **goalConfiguration**:Goal configuration
-- **afterCollisionStiffness**: Motor P-gains after collision.
+- **pgain**: Motor P-gains after collision.
 - **softmax**: Motor current limit
 - **torque_soft_max**:Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
 - **torque_soft_min**:Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
