@@ -229,7 +229,7 @@ odrv1 = odrive.find_any(serial_number=SN_M2)
 MOTOR1 = Actuator(odrv0, 0, 1, 45) 
 MOTOR2 = Actuator(odrv1, 0, 1, 45)
 ```
-(4) Select controlSignal in GRIPPER/mainGripper.py. 
+(4) Select one controlSignal in GRIPPER/mainGripper.py. 
 ```bash 
 controlSignal = 'Scoop'
 #controlSignal = 'testFinger'
