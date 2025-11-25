@@ -252,7 +252,7 @@ There are a set of control parameters that you can customize for different objec
 - **softmax**: Motor current limit
 - **torque_soft_max**:Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
 - **torque_soft_min**:Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
-
+- **sensi**:Motor angle Error range
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
