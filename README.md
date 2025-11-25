@@ -254,7 +254,7 @@ There are a set of control parameters that you can customize for different objec
 - **torque_soft_min**: Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
 - **sensi**: Motor angle Error range
 
-for instance. In the code, the parameters are preset as follows, to scoop a iphone mini 13(150g).
+for instance. In the code, the parameters are preset as follows, to scoop a iphone mini 13(155g).
 ```bash
 #Example code
 x0=-40 ,y0=130
