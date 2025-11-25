@@ -4,7 +4,7 @@ We present our spatula-type **Direct-Drive End-Effector** that rapidly inserts b
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).
 
 <img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />　
-<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/690a4544-f94f-4f63-9928-05304e68aa5d" />
+
 <img width="1000" height="380" alt="Image" src="https://github.com/user-attachments/assets/658a1eda-8ab0-41ec-b8e5-abd862391134" />
 
 **Related repos**
