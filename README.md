@@ -199,8 +199,30 @@ if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct
 Modify GRIPPER/Spatula.py as follows.
 
 (1) Define the variables SN_M1, SN_M2 using the serial numbers aforementioned.
-
-
+```bash 
+SN_M1 = '383F34723539'
+SN_M2 = '00E848E15413'
+```
+(2) Create odrive objects using those SN_M1, SN_M2.
+```bash 
+odrv0 = odrive.find_any(serial_number=SN_M1)
+odrv1 = odrive.find_any(serial_number=SN_M2)
+```
+(3) Create Actuator objects using the odrive objects above. 
+```bash 
+MOTOR1 = Actuator(odrv0, 0, 1, 45) 
+MOTOR2 = Actuator(odrv1, 0, 1, 45)
+```
+(4) Set controlSignal in GRIPPER/mainGripper.py. 
+```bash 
+controlSignal = 'Scoop'
+#controlSignal = 'testFinger'
+#controlSignal = 'testEdge'
+#controlSignal = 'testGetTheta'
+#controlSignal = 'testGetEdge'
+#controlSignal = 'testGetFingerTip'
+#controlSignal = 'testMotionStop'
+```
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
