@@ -43,6 +43,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
   - [Experiment ② : Test Object (30 g)](#experiment---test-object-50-g)  
   - [Experiment ③ : Carton Box (63 g)](#experiment---carton-box-63-g)
+  - [Experiment ④ : iphone13 mini (155 g)](#experiment---carton-box-63-g)
 - [Contributors](#contributors)
 ---
 # Parts
