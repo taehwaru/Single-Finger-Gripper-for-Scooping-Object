@@ -19,9 +19,12 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
       - [Off-the-Shelf Parts](#off-the-shelf-parts)  
       - [3D Printing](#3d-printing)
 - [Motors](#motors)
+  - [Wiring](#wiring)
+    - [Encoder Connection](#encoder-connection)
+    - [Motor Connection](#motor-connection)  
   - [Motor Calibration](#motor-calibration)
     - [Calibrate ODrives](#calibrate-odrive)
-    - [Calibrate Zero Position](#calibrate-zero-position)  
+    - [Calibrate Zero Position](#calibrate-zero-position)
 - [Gripper](#gripper)  
   - [Finger Assembly](#finger-assembly)  
   - [Gripper Assembly](#gripper-assembly)
@@ -85,11 +88,11 @@ We need two motor subassemblies. Each one can be assembled as follows.
 <img width="600" height="515" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
 <img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
 
-# Wiring
+## Wiring
 The components should be connected following the diagram below. For power supply, the system supports an input range of DC 12-48V. In our setup, we supplied 24V. The encoder connection will be further elaborated. 
 <img width="1744" height="973" alt="Image" src="https://github.com/user-attachments/assets/88c62bc8-fbec-463a-b960-22034f1697e2" />
 
-# Encoder connection
+### Encoder Connection
 For the encoder connection, we fabricated a cable assembly as shown in the schematic below.
 
 The wires were joined using heat-shrinkable tube (3.0 × 45 mm) instead of soldering.
@@ -99,7 +102,7 @@ And Finally, insert the connector into the Odrive S1 as shown in the figure belo
 <img width="1837" height="1189" alt="Image" src="https://github.com/user-attachments/assets/dfc7c40a-b6ca-4473-9a47-8eb678853f31" />
 <img width="1869" height="863" alt="Image" src="https://github.com/user-attachments/assets/650155c4-d2ad-46cc-8736-15eb1a2ce3d7" />
 
-# Motor Connection
+### Motor Connection
 Keep the 3-phase connection consistent as shown below.
 <img width="1641" height="831" alt="Image" src="https://github.com/user-attachments/assets/5a307f72-e21f-43be-b147-1bf35b271d80" />
 
