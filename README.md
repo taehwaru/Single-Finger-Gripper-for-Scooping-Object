@@ -253,6 +253,24 @@ There are a set of control parameters that you can customize for different objec
 - **torque_soft_max**:Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
 - **torque_soft_min**:Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
 - **sensi**:Motor angle Error range
+
+for instance. In the code, the parameters are preset as follows, to scoop a iphone mini 13(150g).
+```bash
+#Example code
+x0=-40 ,y0=130
+shoulder01, shoulder02 = ik_5bar_fingerTip(x0, y0)
+initialConfiguration=[shoulder01,shoulder02]
+
+x1=100,y1=10
+shoulder11, shoulder12 = ik_5bar_fingerTip(x1, y1)
+goalConfiguration=[shoulder11, shoulder12]
+
+pgain=[15,15]
+softmax=[4,4]
+torque_soft_max=[0.8,0.8]
+torque_soft_min=[-0.8,-0.8]
+sensi=5
+```
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
 
