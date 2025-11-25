@@ -168,10 +168,6 @@ Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
 - Python: `3.10.11`  
 - ODrive control utility: `0.6.7`
 
-Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
-
-if you finish [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) part and before Run main.py, you have to set Virtual Enviroment.
-
 ## Virtual Environment Settings
 Please open Visual Studio Code terminal and copy and paste the code below to set your virtual environment.  
 
@@ -181,6 +177,7 @@ python3 -m venv myenv
 source myenv/bin/activate
 pip install --upgrade odrive
 ```
+if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
 
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
