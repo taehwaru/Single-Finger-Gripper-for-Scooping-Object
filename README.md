@@ -86,8 +86,8 @@ We need two motor subassemblies. Each one can be assembled as follows.
 <img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
 
 # Wiring
-The components should be connected following the diagram below. The encoder connection will be further elaborated.
-<img width="1834" height="998" alt="Image" src="https://github.com/user-attachments/assets/2c31b6ae-32ce-4414-ac66-0b0831af56c0" />
+The components should be connected following the diagram below. The encoder connection will be further elaborated. For power supply, the system supports an input range of DC 12-48V. In our setup, we supplied 24V.
+<img width="1744" height="973" alt="Image" src="https://github.com/user-attachments/assets/88c62bc8-fbec-463a-b960-22034f1697e2" />
 
 # Encoder connection
 For the encoder connection, we fabricated a cable assembly as shown in the schematic below.
