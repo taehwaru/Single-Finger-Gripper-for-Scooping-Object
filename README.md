@@ -214,7 +214,7 @@ if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct
 ### Before running the code
 Modify GRIPPER/Spatula.py as follows.
 
-(1) Define the variables SN_M1, SN_M2 using the serial numbers aforementioned.
+(1) Define the variables SN_M1, SN_M2 using the serial numbers of each odrive.
 ```bash 
 SN_M1 = '383F34723539'
 SN_M2 = '00E848E15413'
@@ -229,7 +229,7 @@ odrv1 = odrive.find_any(serial_number=SN_M2)
 MOTOR1 = Actuator(odrv0, 0, 1, 45) 
 MOTOR2 = Actuator(odrv1, 0, 1, 45)
 ```
-(4) Set controlSignal in GRIPPER/mainGripper.py. 
+(4) Select controlSignal in GRIPPER/mainGripper.py. 
 ```bash 
 controlSignal = 'Scoop'
 #controlSignal = 'testFinger'
