@@ -28,8 +28,13 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 - [Mounting](#mounting)  
   - [Customization](#customization)
 - [Software](#software)
-  - [Versions](#versions)
-  - [Virtual Environment Settings](#virtual-environment-settings)
+  - [Prerequisites](#prerequisites)
+    - [Versions](#versions)
+    - [Virtual Environment Settings](#virtual-environment-settings)
+  - [Run Single-Finger Gripper for Scooping Object](#run-single-finger-gripper-for-scooping-object)
+    - [Before running the code](#before-running-the-code)
+    - [Let the robot Single-Finger Gripper for Scooping Object](#let-the-robot-single-finger-gripper-for-scooping-object)
+    - [How to customize control parameters](#how-to-customize-control-parameters)
   - [Motor Manipulation](#motor-manipulation)  
 - [Experiments](#experiments)  
   - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
@@ -164,13 +169,20 @@ The gripper is designed to be compatible with **ISO 9409-1-50-4-M6 Flange** (app
 
 # Software
 Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
+## Prerequisites
 
-## Versions
+### Versions
 - Ubuntu: `22.04`  
 - Python: `3.10.11`  
 - ODrive control utility: `0.6.7`
 
-## Virtual Environment Settings
+Git clone our software.
+
+```bash 
+https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object.git
+```
+
+### Virtual Environment Settings
 Please open Visual Studio Code terminal and copy and paste the code below to set your virtual environment.  
 
 ```bash 
@@ -180,6 +192,13 @@ source myenv/bin/activate
 pip install --upgrade odrive
 ```
 if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Software/Getting started](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#getting-started) to get started.
+
+## Run Single-Finger Gripper for Scooping Object
+### Before running the code
+Modify GRIPPER/Spatula.py as follows.
+
+(1) Define the variables SN_M1, SN_M2 using the serial numbers aforementioned.
+
 
 ## Motor Manipulation
 Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be controlled in two modes — either based on the linkage edge point E(xₑ, yₑ) or the fingertip point T(xₜ, yₜ), depending on the desired level of precision. The controller accepts the endpoint position (either E or T) and outputs the two motor commands 𝜃₁ and 𝜃₂.
