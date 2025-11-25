@@ -101,6 +101,7 @@ And Finally, insert the connector into the Odrive S1 as shown in the figure belo
 
 # Motor Connection
 Keep the 3-phase connection consistent as shown below.
+<img width="1641" height="831" alt="Image" src="https://github.com/user-attachments/assets/5a307f72-e21f-43be-b147-1bf35b271d80" />
 
 ## Motor Calibration
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
