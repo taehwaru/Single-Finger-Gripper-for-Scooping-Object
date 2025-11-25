@@ -246,8 +246,8 @@ python3 main.py
 ```
 ### How to customize control parameters
 There are a set of control parameters that you can customize for different objects to scoop.
-- **initialConfiguration**:Initial configuration
-- **goalConfiguration**:Goal configuration
+- **initialConfiguration**: Initial configuration
+- **goalConfiguration**: Goal configuration
 - **pgain**: Motor P-gains after collision.
 - **softmax**: Motor current limit
 - **torque_soft_max**: Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
