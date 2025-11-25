@@ -282,4 +282,4 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 # Contributors
 - **Ji-woong Choi**, chjwng@pusan.ac.kr
 - **Yong-joo Ryu**, ryj01@pusan.ac.kr
-- **Hyun-woo Seong**, zidlt@pusan.ac.kr
+- **Hyun-woo Sung**, zidlt@pusan.ac.kr
