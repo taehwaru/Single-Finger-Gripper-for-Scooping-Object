@@ -245,7 +245,7 @@ Run main.py.
 python3 main.py
 ```
 ### How to customize control parameters
-
+There are a set of control parameters that you can customize for different objects to scoop.
 - **initialConfiguration**:Initial configuration
 - **goalConfiguration**:Goal configuration
 - **pgain**: Motor P-gains after collision.
