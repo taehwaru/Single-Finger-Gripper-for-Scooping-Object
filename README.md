@@ -219,6 +219,9 @@ if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct
 (2) Go to network in Ubuntu settings and enter the information as shown in the picture below.
 <img width="755" height="602" alt="Screenshot from 2025-11-25 19-53-14" src="https://github.com/user-attachments/assets/1f70a011-85f0-4598-8712-b0eb56a0e717" />
 
+(3) Open the terminal and type ping 192.168.0.10. If it comes out like the picture below, the robot arm and the PC are communicating.
+<img width="819" height="582" alt="Screenshot from 2025-11-25 20-38-34" src="https://github.com/user-attachments/assets/d45ba4d9-2218-4fee-9a73-ae45f5fc9a9a" />
+
 
 ## Run Single-Finger Gripper for Scooping Object
 ### Before running the code
