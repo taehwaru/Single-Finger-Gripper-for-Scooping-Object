@@ -25,9 +25,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Motor Calibration](#motor-calibration)
     - [Calibrate ODrives](#calibrate-odrive)
     - [Calibrate Zero Position](#calibrate-zero-position)
-- [Gripper](#gripper)  
+- [Single Finger](#single-finger)  
   - [Finger Assembly](#finger-assembly)  
-  - [Gripper Assembly](#gripper-assembly)
+  - [Motor Shell Assembly](#motor-shell-assembly)
 - [Mounting](#mounting)  
   - [Customization](#customization)
 - [Software](#software)
@@ -163,12 +163,12 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 
 
 
-# Gripper
+# Single Finger
 
 ## Finger Assembly  
 <img width="1000" height="1189" alt="Image" src="https://github.com/user-attachments/assets/1a8166db-eabc-4d4d-bfb1-378a043d2473" />
 
-## Gripper Assembly
+## Motor Shell Assembly
 <img width="800" height="1030" alt="Image" src="https://github.com/user-attachments/assets/8e4ec863-8d67-47b9-b2ad-74216baeeba6" />
 
 
