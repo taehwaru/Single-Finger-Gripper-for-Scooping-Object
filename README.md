@@ -250,9 +250,9 @@ There are a set of control parameters that you can customize for different objec
 - **goalConfiguration**:Goal configuration
 - **pgain**: Motor P-gains after collision.
 - **softmax**: Motor current limit
-- **torque_soft_max**:Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
-- **torque_soft_min**:Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
-- **sensi**:Motor angle Error range
+- **torque_soft_max**: Motor positive torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
+- **torque_soft_min**: Motor negative torque limit(this variable not contain at code so if you want to fix it, you can use odrive gui) 
+- **sensi**: Motor angle Error range
 
 for instance. In the code, the parameters are preset as follows, to scoop a iphone mini 13(150g).
 ```bash
