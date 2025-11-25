@@ -86,9 +86,16 @@ We need two motor subassemblies. Each one can be assembled as follows.
 <img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
 
 # Wiring
+The components should be connected following the diagram below. The encoder connection will be further elaborated.
 <img width="1834" height="998" alt="Image" src="https://github.com/user-attachments/assets/2c31b6ae-32ce-4414-ac66-0b0831af56c0" />
 
 # Encoder connection
+For the encoder connection, we fabricated a cable assembly as shown in the schematic below.
+
+The wires were joined using heat-shrinkable tube (3.0 × 45 mm) instead of soldering.
+After aligning the wires inside the tube, apply heat with a heat gun or lighter to shrink the tube and secure the connection.
+
+And Finally, insert the connector into the Odrive S1 as shown in the figure below.
 <img width="1837" height="1189" alt="Image" src="https://github.com/user-attachments/assets/dfc7c40a-b6ca-4473-9a47-8eb678853f31" />
 <img width="1869" height="863" alt="Image" src="https://github.com/user-attachments/assets/650155c4-d2ad-46cc-8736-15eb1a2ce3d7" />
 
