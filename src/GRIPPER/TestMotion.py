@@ -116,7 +116,7 @@ def Scoop():
         print(f"tip_pos: [{x_cur:.2f}, {y_cur:.2f}] mm")
         if (cnt==1):
             break
-        if ((pos[0] < initialConfiguration[0]-sensi or initialConfiguration[0] > initialConfiguration[0]+sensi or pos[1] < initialConfiguration[1]-sensi or pos[1] > initialConfiguration[1]+sensi ) and (cnt==0)): # 0.01초 간격으로 모터 위치 확인
+        if ((pos[0] < initialConfiguration[0]-sensi or pos[0] > initialConfiguration[0]+sensi or pos[1] < initialConfiguration[1]-sensi or pos[1] > initialConfiguration[1]+sensi ) and (cnt==0)): # 0.01초 간격으로 모터 위치 확인
              Spatula.SetCurrentsoftmax(softmax)
              Spatula.SetStiffness(pgain)
              sleep(0.1)
