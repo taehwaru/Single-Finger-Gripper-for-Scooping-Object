@@ -103,7 +103,7 @@ The wires were joined using heat-shrinkable tube (3.0 × 45 mm) instead of solde
 After aligning the wires inside the tube, apply heat with a heat gun or lighter to shrink the tube and secure the connection.
 
 And Finally, insert the connector into the Odrive S1 as shown in the figure below.
-<img width="1837" height="1189" alt="Image" src="https://github.com/user-attachments/assets/dfc7c40a-b6ca-4473-9a47-8eb678853f31" />
+<img width="1515" height="1027" alt="Image" src="https://github.com/user-attachments/assets/4757ec5a-1d04-4ae5-92e2-a462b663f534" />
 <img width="1869" height="863" alt="Image" src="https://github.com/user-attachments/assets/650155c4-d2ad-46cc-8736-15eb1a2ce3d7" />
 
 ### Motor Connection
