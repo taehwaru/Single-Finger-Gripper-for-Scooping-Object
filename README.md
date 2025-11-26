@@ -26,8 +26,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - [Calibrate ODrives](#calibrate-odrive)
     - [Calibrate Zero Position](#calibrate-zero-position)
 - [Single Finger](#single-finger)  
-  - [Finger Assembly](#finger-assembly)  
-  - [Motor Shell Assembly](#motor-shell-assembly)
+  - [Finger Assembly](#finger-assembly) 
 - [Mounting](#mounting)  
   - [Customization](#customization)
 - [Software](#software)
@@ -168,11 +167,8 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 # Single Finger
 
 ## Finger Assembly  
-<img width="1000" height="1189" alt="Image" src="https://github.com/user-attachments/assets/1a8166db-eabc-4d4d-bfb1-378a043d2473" />
-
-## Motor Shell Assembly
-<img width="800" height="1030" alt="Image" src="https://github.com/user-attachments/assets/8e4ec863-8d67-47b9-b2ad-74216baeeba6" />
-
+<img width="1280" height="2458" alt="Image" src="https://github.com/user-attachments/assets/f26223c7-eeba-4be0-ad86-cebb4b3ca76b" />
+<img width="1280" height="2472" alt="Image" src="https://github.com/user-attachments/assets/c9d714bf-d9e3-47b6-ab62-b01cca140ee8" />
 
 # Mounting
 Standard interface: **30 mm PCD**, **4 × M4**.  
