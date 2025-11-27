@@ -1,6 +1,6 @@
-# Single-Finger Gripper for Scooping Object
+# Direct-Drive Finger for Scooping
 
-We present our spatula-type **Direct-Drive End-Effector** that rapidly inserts beneath an object and scoops it without ejection.
+We present our **Direct-Drive End-Effector** with Spatulate Fingertip that rapidly inserts beneath an object and scoops it without ejection.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).
 
 <img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />　
@@ -61,9 +61,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 - [3-phase cable](https://smartstore.naver.com/shipdiy/products/7890381050?) × 3
 
 ### 3D Printing
-- **Single Finger**
-<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/690a4544-f94f-4f63-9928-05304e68aa5d" />
+<img width="304" height="410" alt="Image" src="https://github.com/user-attachments/assets/7588853f-a6fa-4fc5-bfaf-7f3a8790da87" />
 
+- **Direct-Drive Finger**
   - [distal_link](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_link.stl) × 2  
   - [distal_tip_cap](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_tip.stl) × 1  
   - [distal_tip](https://github.com/taehwaru/Single-Finger-Gripper-for-Scooping-Object/blob/main/STL/Gripper/distal_tip_cap.stl) × 1  
@@ -84,12 +84,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - to be added
 
 # Motors
-Please refer to [JS-RML, Direct-Drive Gripper with Swivel Fingertips/Motors](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips/tree/main?tab=readme-ov-file#motors).
 We need two motor subassemblies. Each one can be assembled as follows.
 
-<img width="512" height="508" alt="Image" src="https://github.com/user-attachments/assets/48826f68-7391-4c78-9f94-8025019ff439" />
-<img width="600" height="515" alt="Image" src="https://github.com/user-attachments/assets/92949678-feb1-4e81-b83c-a3e7a012e38f" />
-<img width="512" height="528" alt="Image" src="https://github.com/user-attachments/assets/eb5de35e-2d01-4f72-b3d5-c253eea90626" />
+<img width="1280" height="1703" alt="Image" src="https://github.com/user-attachments/assets/79c21dce-fcfb-49d4-9b6a-0532fa1785b2" />
 
 ## Wiring
 The components should be connected following the diagram below. For power supply, the system supports an input range of DC 12-48V. In our setup, we supplied 24V. The encoder connection will be further elaborated. 
@@ -107,7 +104,7 @@ And Finally, insert the connector into the Odrive S1 as shown in the figure belo
 
 ### Motor Connection
 Keep the 3-phase connection consistent as shown below.
-<img width="1503" height="717" alt="Image" src="https://github.com/user-attachments/assets/6dc8c568-4754-463e-8fbc-e998ff4ce229" />
+<img width="1152" height="531" alt="Image" src="https://github.com/user-attachments/assets/32f18379-f5f1-4027-a078-bed4dd56cb18" />
 
 ## Motor Calibration
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
@@ -164,11 +161,11 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 
 
 
-# Single Finger
+# Assembly Instructions
 
-## Finger Assembly  
-<img width="1280" height="2458" alt="Image" src="https://github.com/user-attachments/assets/f26223c7-eeba-4be0-ad86-cebb4b3ca76b" />
-<img width="1280" height="2472" alt="Image" src="https://github.com/user-attachments/assets/c9d714bf-d9e3-47b6-ab62-b01cca140ee8" />
+## Direct-Drive Finger Assembly 
+<img width="1280" height="2422" alt="Image" src="https://github.com/user-attachments/assets/c514e223-d3c4-4c1e-8900-ce5013907d49" />
+<img width="1280" height="2492" alt="Image" src="https://github.com/user-attachments/assets/991847a2-96c4-45be-92cb-0554bc946118" />
 
 # Mounting
 Standard interface: **30 mm PCD**, **4 × M4**.  
