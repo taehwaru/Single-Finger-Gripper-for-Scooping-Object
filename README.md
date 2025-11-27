@@ -86,7 +86,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 # Motors
 We need two motor subassemblies. Each one can be assembled as follows.
 
-<img width="1280" height="1703" alt="Image" src="https://github.com/user-attachments/assets/79c21dce-fcfb-49d4-9b6a-0532fa1785b2" />
+<img width="1280" height="1768" alt="Image" src="https://github.com/user-attachments/assets/77aa1d52-9c1e-43d5-90d0-f86c1f084072" />
 
 ## Wiring
 The components should be connected following the diagram below. For power supply, the system supports an input range of DC 12-48V. In our setup, we supplied 24V. The encoder connection will be further elaborated. 
