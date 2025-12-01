@@ -85,7 +85,6 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
 
 # Motors
 We need two motor subassemblies. Each one can be assembled as follows.
-
 <img width="1280" height="1768" alt="Image" src="https://github.com/user-attachments/assets/77aa1d52-9c1e-43d5-90d0-f86c1f084072" />
 
 ## Wiring
@@ -168,7 +167,7 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 <img width="1280" height="2492" alt="Image" src="https://github.com/user-attachments/assets/991847a2-96c4-45be-92cb-0554bc946118" />
 
 # Mounting
-<img width="1280" height="1970" alt="Image" src="https://github.com/user-attachments/assets/89c7e7c2-71cd-4b84-aca2-0b4b2684605e" />
+<img width="1280" height="1970" alt="Image" src="https://github.com/user-attachments/assets/deddceaf-6fd0-4b49-b042-5ffa2c0efdc2" />
 
 ## Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The end-effector has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
