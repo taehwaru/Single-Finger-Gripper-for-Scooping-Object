@@ -109,8 +109,7 @@ Keep the 3-phase connection consistent as shown below.
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
 
 We explicitly define the direction of the rotor to be the direction the hexagonal logo on the rotor is pointing at, and the zero position of the motor to be when the direction of the motor is pointing at the opposite direction of the power port on the stator.
-
-<img width="2828" height="1541" alt="Image" src="https://github.com/user-attachments/assets/c8864a2c-190a-4c7e-8fab-3e0af4f949aa" />
+<img width="1232" height="634" alt="Image" src="https://github.com/user-attachments/assets/2e9a2159-5ab5-4677-80d2-0ea72c41dd1f" />
 
 
 
