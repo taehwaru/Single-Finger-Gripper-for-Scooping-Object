@@ -149,9 +149,9 @@ ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https
 
 ### Calibrate Zero Position
 Here we calibrate the zero position of the motor. Mount the actuator on the calibration stand and install the calibration arm onto the actuator according to the diagram
-<img width="1000" height="1200" alt="motor-calib-stand" src="https://github.com/user-attachments/assets/ed182651-2a10-4a5d-a702-55116d22c98d" />
+<img width="1280" height="650" alt="Image" src="https://github.com/user-attachments/assets/6359f1ea-b426-4fc5-9728-9db83a35ee8c" />
 Put the motor into zero position as show in the diagram below. Press down the calibration arm to make sure the stand and arm touch tightly.
-<img width="1000" height="1200" alt="calib-zero" src="https://github.com/user-attachments/assets/3be51595-16b0-4aeb-8c0c-2c59aba9a498" />
+<img width="1280" height="720" alt="Image" src="https://github.com/user-attachments/assets/1e7dddc3-7e0b-48ff-9835-6cffe44a2a88" />
 when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector' tab of the [Odrive GUI](https://gui.odriverobotics.com/inspector) and set like picture below.(when you finish First step, Second step is you have to click save_configuration variable call button, Refer to [Odrive doucument](https://docs.odriverobotics.com/v/latest/manual/control.html#absolute-encoder-reference-frame_))
 <img width="1200" height="677" alt="guirrreaaaal" src="https://github.com/user-attachments/assets/e2494c2e-048a-4bb4-ab56-a25cfc9466ab" />
 
@@ -171,12 +171,10 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 
 ## Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The end-effector has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
-
-<img width="600" height="600" alt="Image" src="https://github.com/user-attachments/assets/d36c3c38-fb2b-4576-9075-9bcff69326f0" />
-
+<img width="450" height="600" alt="Image" src="https://github.com/user-attachments/assets/ac228425-be4f-4dbd-9b15-36e9f07012d9" />
 
 The end-effector is designed to be compatible with **ISO 9409-1-50-4-M6 Flange** (applied Rainbow robotics RB5, Universal Robots UR10e, Universal Robots UR5, etc.). For other robot systems, it would be better to customize the adapter plate and coupling.
-<img width="450" height="600" alt="Image" src="https://github.com/user-attachments/assets/ac228425-be4f-4dbd-9b15-36e9f07012d9" />
+<img width="600" height="600" alt="Image" src="https://github.com/user-attachments/assets/d36c3c38-fb2b-4576-9075-9bcff69326f0" />
 
 # Software
 Implemented in **Python 3** on **Ubuntu**. For ODrive basics, see official docs.
