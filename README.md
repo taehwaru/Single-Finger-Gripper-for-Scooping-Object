@@ -109,6 +109,7 @@ Keep the 3-phase connection consistent as shown below.
 Each actuator module require calibration before use. This step can not be done after the gripper is assembled, so do not postpone this step.
 
 We explicitly define the direction of the rotor to be the direction the hexagonal logo on the rotor is pointing at, and the zero position of the motor to be when the direction of the motor is pointing at the opposite direction of the power port on the stator.
+
 <img width="2828" height="1541" alt="Image" src="https://github.com/user-attachments/assets/c8864a2c-190a-4c7e-8fab-3e0af4f949aa" />
 
 
@@ -171,7 +172,9 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 
 ## Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The end-effector has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
+
 <img width="600" height="600" alt="Image" src="https://github.com/user-attachments/assets/d36c3c38-fb2b-4576-9075-9bcff69326f0" />
+
 
 The end-effector is designed to be compatible with **ISO 9409-1-50-4-M6 Flange** (applied Rainbow robotics RB5, Universal Robots UR10e, Universal Robots UR5, etc.). For other robot systems, it would be better to customize the adapter plate and coupling.
 <img width="450" height="600" alt="Image" src="https://github.com/user-attachments/assets/ac228425-be4f-4dbd-9b15-36e9f07012d9" />
