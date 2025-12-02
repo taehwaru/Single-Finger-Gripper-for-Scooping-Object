@@ -171,9 +171,11 @@ when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector'
 
 ## Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The end-effector has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
+
 <img width="450" height="600" alt="Image" src="https://github.com/user-attachments/assets/ac228425-be4f-4dbd-9b15-36e9f07012d9" />
 
 The end-effector is designed to be compatible with **ISO 9409-1-50-4-M6 Flange** (applied Rainbow robotics RB5, Universal Robots UR10e, Universal Robots UR5, etc.). For other robot systems, it would be better to customize the adapter plate and coupling.
+
 <img width="600" height="600" alt="Image" src="https://github.com/user-attachments/assets/d36c3c38-fb2b-4576-9075-9bcff69326f0" />
 
 # Software
