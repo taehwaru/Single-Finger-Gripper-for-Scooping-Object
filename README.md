@@ -152,7 +152,7 @@ Here we calibrate the zero position of the motor. Mount the actuator on the cali
 <img width="1000" height="1200" alt="motor-calib-stand" src="https://github.com/user-attachments/assets/ed182651-2a10-4a5d-a702-55116d22c98d" />
 Put the motor into zero position as show in the diagram below. Press down the calibration arm to make sure the stand and arm touch tightly.
 <img width="1000" height="1200" alt="calib-zero" src="https://github.com/user-attachments/assets/3be51595-16b0-4aeb-8c0c-2c59aba9a498" />
-when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector' tab of the [Odrive GUI](https://gui.odriverobotics.com/inspector) and set like picture below.(when you finish First step, Second step is you have to click save_configuration variable call button)
+when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector' tab of the [Odrive GUI](https://gui.odriverobotics.com/inspector) and set like picture below.(when you finish First step, Second step is you have to click save_configuration variable call button, Refer to [Odrive doucument](https://docs.odriverobotics.com/v/latest/manual/control.html#absolute-encoder-reference-frame_))
 <img width="1200" height="677" alt="guirrreaaaal" src="https://github.com/user-attachments/assets/e2494c2e-048a-4bb4-ab56-a25cfc9466ab" />
 
 
