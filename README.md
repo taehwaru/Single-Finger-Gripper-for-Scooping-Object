@@ -24,7 +24,7 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - [Calibrate ODrives](#calibrate-odrive)
     - [Calibrate Zero Position](#calibrate-zero-position)
 - [Assembly Instructions](#assembly-instructions)  
-  - [Direct-Drive Finger Assembly](#Direct---Drive-Finge-Assembly) 
+  - [Direct-Drive Finger Assembly](#direct-drive-finger-assembly) 
   - [Mounting](#mounting)  
     - [Customization](#customization)
 - [Software](#software)
@@ -32,9 +32,9 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - [Versions](#versions)
     - [Virtual Environment Settings](#virtual-environment-settings)
     - [How to connect Robot Arm and PC](#how-to-connect-robot-arm-and-pc)
-  - [Run Single-Finger Gripper for Scooping Object](#run-single-finger-gripper-for-scooping-object)
+  - [Run Single-Finger Gripper for Scooping Object](#run-finger-for-scooping-object)
     - [Before running the code](#before-running-the-code)
-    - [Let the robot Single-Finger Gripper for Scooping Object](#let-the-robot-single-finger-gripper-for-scooping-object)
+    - [Let the robot Single-Finger Gripper for Scooping Object](#let-the-finger-for-scooping-object)
     - [How to customize control parameters](#how-to-customize-control-parameters)
   - [Motor Manipulation](#motor-manipulation)
     - [Example ① : input E](#example---input-e)
@@ -207,7 +207,7 @@ if you finish Virtual Environment Settings part, Please refer to [JS-RML, Direct
 <img width="819" height="582" alt="Screenshot from 2025-11-25 20-38-34" src="https://github.com/user-attachments/assets/d45ba4d9-2218-4fee-9a73-ae45f5fc9a9a" />
 
 
-## Run Single-Finger Gripper for Scooping Object
+## Run Finger for Scooping Object
 ### Before running the code
 Modify GRIPPER/Spatula.py as follows.
 
@@ -236,7 +236,7 @@ controlSignal = 'Scoop'
 #controlSignal = 'testGetFingerTip'
 #controlSignal = 'testMotionStop'
 ```
-### Let the robot Single-Finger Gripper for Scooping Object
+### Let the finger for Scooping Object
 Run main.py.
 ```bash 
 python3 main.py
