@@ -3,9 +3,7 @@
 We present our **Direct-Drive End-Effector** with Spatulate Fingertip that rapidly inserts beneath an object and scoops it without ejection.
 This project is inspired by and extends the work of [Direct-Drive-Gripper-with-Swivel-Fingertips](https://github.com/JS-RML/Direct-Drive-Gripper-with-Swivel-Fingertips).
 
-<img width="1000" height="615" alt="Image" src="https://github.com/user-attachments/assets/2f29c692-15a6-46a8-bbcc-e8a3e211f1c3" />　
-
-<img width="1000" height="380" alt="Image" src="https://github.com/user-attachments/assets/658a1eda-8ab0-41ec-b8e5-abd862391134" />
+<img width="1293" height="982" alt="Image" src="https://github.com/user-attachments/assets/5e0e6ab9-3b45-4f68-846c-eb069c8a3b8d" />
 
 **Related repos**
 * [**High-Speed Scooping (2024)**](https://github.com/JS-RML/Advanced-high-speed-scooping)
@@ -25,10 +23,10 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
   - [Motor Calibration](#motor-calibration)
     - [Calibrate ODrives](#calibrate-odrive)
     - [Calibrate Zero Position](#calibrate-zero-position)
-- [Single Finger](#single-finger)  
-  - [Finger Assembly](#finger-assembly) 
-- [Mounting](#mounting)  
-  - [Customization](#customization)
+- [Assembly Instructions](#assembly-instructions)  
+  - [Direct-Drive Finger Assembly](#Direct---Drive-Finge-Assembly) 
+  - [Mounting](#mounting)  
+    - [Customization](#customization)
 - [Software](#software)
   - [Prerequisites](#prerequisites)
     - [Versions](#versions)
@@ -40,12 +38,14 @@ This project is inspired by and extends the work of [Direct-Drive-Gripper-with-S
     - [How to customize control parameters](#how-to-customize-control-parameters)
   - [Motor Manipulation](#motor-manipulation)
     - [Example ① : input E](#example---input-e)
-    - [Example ② : input T](#example---input-e)
-- [Experiments](#experiments)  
-  - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
-  - [Experiment ② : Test Object (30 g)](#experiment---test-object-50-g)  
-  - [Experiment ③ : Carton Box (63 g)](#experiment---carton-box-63-g)
-  - [Experiment ④ : iphone13 mini (155 g)](#experiment---carton-box-63-g)
+    - [Example ② : input T](#example---input-t)
+- [Experiments](#experiments)
+  - [Experiment Setting](#experiment-setting)
+  - [Results](#results)   
+    - [Experiment ① : Test Object (10 g)](#experiment---test-object-30-g)  
+    -  [Experiment ② : Test Object (30 g)](#experiment---test-object-50-g)  
+    - [Experiment ③ : Carton Box (63 g)](#experiment---carton-box-63-g)
+    - [Experiment ④ : iphone13 mini (155 g)](#experiment---carton-box-63-g)
 - [Contributors](#contributors)
 ---
 # Parts
@@ -111,9 +111,6 @@ Each actuator module require calibration before use. This step can not be done a
 We explicitly define the direction of the rotor to be the direction the hexagonal logo on the rotor is pointing at, and the zero position of the motor to be when the direction of the motor is pointing at the opposite direction of the power port on the stator.
 <img width="1232" height="634" alt="Image" src="https://github.com/user-attachments/assets/2e9a2159-5ab5-4677-80d2-0ea72c41dd1f" />
 
-
-
-
 ### Calibrate Odrive
 ODrive provides a GUI service for setting up the motordriver. [Odrive GUI](https://gui.odriverobotics.com/inspector) In the configuration tab in this GUI, You can set up the motordriver's configuration. (this step need motor move freely so you don't set like Calibrate Zero Position diagram)
 - **Power source**
@@ -155,21 +152,16 @@ Put the motor into zero position as show in the diagram below. Press down the ca
 when your motor is zero position you go to (ODrive0, ODrive1) in the 'inspector' tab of the [Odrive GUI](https://gui.odriverobotics.com/inspector) and set like picture below.(when you finish First step, Second step is you have to click save_configuration variable call button, Refer to [Odrive doucument](https://docs.odriverobotics.com/v/latest/manual/control.html#absolute-encoder-reference-frame_))
 <img width="1200" height="677" alt="guirrreaaaal" src="https://github.com/user-attachments/assets/e2494c2e-048a-4bb4-ab56-a25cfc9466ab" />
 
-
-
-
-
-
 # Assembly Instructions
 
-## Direct-Drive Finger Assembly 
+## Direct-Drive Finger Assembly
 <img width="1280" height="2422" alt="Image" src="https://github.com/user-attachments/assets/c514e223-d3c4-4c1e-8900-ce5013907d49" />
 <img width="1280" height="2492" alt="Image" src="https://github.com/user-attachments/assets/991847a2-96c4-45be-92cb-0554bc946118" />
 
-# Mounting
+## Mounting
 <img width="1280" height="1970" alt="Image" src="https://github.com/user-attachments/assets/deddceaf-6fd0-4b49-b042-5ffa2c0efdc2" />
 
-## Customization
+### Customization
 If the default mounting does not work for you, it's very easy to make a custom mount. The end-effector has a 30 mm PCD with 4 ⨉ M4 mounting interface, as shown in the drawing below.
 
 <img width="450" height="600" alt="Image" src="https://github.com/user-attachments/assets/ac228425-be4f-4dbd-9b15-36e9f07012d9" />
@@ -292,16 +284,27 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 
 # Experiments
 
-## Experiment ① : Test Object (30 g)
+## Experiment Setting
+<img width="593" height="369" alt="Image" src="https://github.com/user-attachments/assets/b3d553c9-00f7-4056-b0af-d935d4488f40" />
+
+## Results
+
+| Task Objects | Mass (g) | P-Gain (Stiffness) | Torque Limit (N·m) | Success Rate |
+| :-----------:| :------: | :----------------: | :----------------: | :----------: |
+| 3D Printed   | 10-50    | 15                 | ±0.4               | 90% (27/30)  |
+| Carton Box   | 63       | 15                 | ±0.4               | 66.6% (20/30)|
+| Phone        | 63       | 15                 | ±0.4               | 60% (20/30)  |
+
+### Experiment ① : Test Object (30 g)
 ![Image](https://github.com/user-attachments/assets/8e143c2e-c073-407b-bec9-ceb2e2c65446)
 
-## Experiment ② : Test Object (50 g)
+### Experiment ② : Test Object (50 g)
 ![Image](https://github.com/user-attachments/assets/ee2b3c5d-b702-479b-9f97-769e5a075928)
 
-## Experiment ③ : Carton Box (63 g)
+### Experiment ③ : Carton Box (63 g)
 ![Image](https://github.com/user-attachments/assets/af97a3cc-2167-4f34-87b2-e2fcbdd92bf5)
 
-## Experiment ④ : iphone13 mini (155 g)
+### Experiment ④ : iphone13 mini (155 g)
 ![Image](https://github.com/user-attachments/assets/b9216237-a5b9-4b81-b98c-ca86de7b9b4e)
 
 # Contributors
