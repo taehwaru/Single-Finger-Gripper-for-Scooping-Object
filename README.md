@@ -285,7 +285,7 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 # Experiments
 
 ## Experiment Setting
-<img width="593" height="369" alt="Image" src="https://github.com/user-attachments/assets/b3d553c9-00f7-4056-b0af-d935d4488f40" />
+<img width="623" height="369" alt="Image" src="https://github.com/user-attachments/assets/6e298c67-1d82-4a43-9ff5-349390fe53cd" />
 
 ## Results
 
