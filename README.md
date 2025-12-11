@@ -293,7 +293,7 @@ Our end-effector uses a **Coaxial 5-bar (Diamond) Linkage**. The system can be c
 | :-----------:| :------: | :----------------: | :----------------: | :----------: |
 | 3D Printed   | 10-50    | 15                 | ±0.4               | 90% (27/30)  |
 | Carton Box   | 63       | 15                 | ±0.4               | 66.6% (20/30)|
-| Phone        | 63       | 15                 | ±0.4               | 60% (20/30)  |
+| Phone        | 155      | 150                | ±0.8               | 60% (20/30)  |
 
 ### Experiment ① : Test Object (30 g)
 ![Image](https://github.com/user-attachments/assets/8e143c2e-c073-407b-bec9-ceb2e2c65446)
